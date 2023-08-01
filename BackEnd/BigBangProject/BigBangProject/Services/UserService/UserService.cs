@@ -1,4 +1,5 @@
-﻿using BigBangProject.Model;
+﻿using BigBangProject.GlobalException;
+using BigBangProject.Model;
 using BigBangProject.Model.DTO;
 using BigBangProject.Repository.UserRepository;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,10 @@ namespace BigBangProject.Services.UserService
                              PackStarts = locationPackages.Min(p => p.PricePerPerson)
                          }
                         ).ToList();
-
+            if (items == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return items;
         }
         public async Task<List<PackageDTO>?> GetAllPackage(int locationId)
@@ -48,50 +52,83 @@ namespace BigBangProject.Services.UserService
                              PricePerPerson =pack.PricePerPerson
                          }
                         ).ToList();
+            if (items == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return items;
         }
         public async Task<List<ScheduleDTO>> GetDayScheduleForPackage(int packageId)
         {
-            var item = await _userRepository.GetDayScheduleForPackage(packageId);
-            var package = await _userRepository.GetAllPackage();
-            var locate = await _userRepository.GetLocation();
-            var hotel = await _userRepository.GetAllHotels();
-            var spot = await _userRepository.GetAllSightSeeing();
-            var itemlist = (from pack in package
-                            join loc in locate on pack.LocationId equals loc.Id
-                            join spt in spot on loc.Id equals spt.LocationId
-                            join hot in hotel on spt.Id equals hot.SightSeeingId
-                            join sched in item on pack.Id equals sched.PackageId
-                            where pack.Id == packageId && sched.HotelName==hot.HotelName && sched.SpotName==spt.SpotName
-                            select new ScheduleDTO()
-                            {
-                                PackageId=pack.Id,
-                                LocationId=loc.Id,
-                                HotelImage=hot.HotelImageName,
-                                HotelName=sched.HotelName,
-                                SpotImage=spt.ImageName,
-                                SpotName=sched.SpotName,
-                                VehicleName=sched.VehicleName,
-                                PackageImage=pack.ImageName,
-                                Day=sched.Daywise
-                            }
-                ).ToList();
-            return itemlist;
+            var daySchedules = await _userRepository.GetDayScheduleForPackage(packageId);
+            var package = await _userRepository.GetPackageById(packageId);
+
+            var dayWiseSchedules = new List<ScheduleDTO>();
+
+            for (int dayNo = 1; dayNo <= package.NumberOfDays; dayNo++)
+            {
+                var daySchedule = daySchedules.FirstOrDefault(ds => ds.Daywise == dayNo);
+                if (daySchedule == null)
+                {
+                    throw new Exception("daySchedule is null");
+                }
+                else
+                {
+                    var spot = await _userRepository.GetSpotByName(daySchedule.SpotName ?? "");
+                    var hotel = await _userRepository.GetHotelByName(daySchedule.HotelName ?? "");
+
+                    var dayWiseSchedule = new ScheduleDTO
+                    {
+                        PackageId =daySchedule.PackageId,
+                        Id = daySchedule.Id,
+                        Day = dayNo,
+                        SpotName = daySchedule.SpotName,
+                        SpotImage = spot?.ImageName,
+                        SpotAddress = spot?.SpotAddress,
+                        SpotDuration = spot?.DurationPerHour ?? 0,
+                        HotelName = daySchedule.HotelName,
+                        HotelImage = hotel?.HotelImageName,
+                        Rating = hotel?.Ratings ?? 0,
+                        VehicleName = daySchedule.VehicleName,
+                        MealsImage = hotel?.MealsImageName,
+                        MealsName =hotel?.FoodDescription,
+                        BedType=hotel?.BedType,
+                        HotelFeatures = hotel?.HotelFeatures
+                    };
+
+                    dayWiseSchedules.Add(dayWiseSchedule);
+                }
+            }
+
+            return dayWiseSchedules;
+
         }
 
         public async Task<List<Booking>> BookPackage(Booking booking)
         {
             var itemlist = await _userRepository.BookPackage(booking);
+            if (itemlist == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return itemlist;
         }
         public async Task<string?> GetEmailById(int Id)
         {
             var item = await _userRepository.GetEmailById(Id);
+            if (item == null)
+            {
+                throw new ArgumentNullException(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return item;
         }
         public async Task<List<Feedback>> PostFeedback(Feedback feedback)
         {
             var item= await _userRepository.PostFeedback(feedback);
+            if (item == null)
+            {
+                throw new ArgumentNullException(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return item;
         }
     }

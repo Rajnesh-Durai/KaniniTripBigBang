@@ -16,7 +16,6 @@ namespace BigBangProject.Model
         [StringLength(20, ErrorMessage = "Username cannot exceed 50 characters.")]
         public string? Username { get; set; }
 
-        [StringLength(20, ErrorMessage = "Password cannot exceed 100 characters.")]
         public string Password { get; set; } = string.Empty;
 
         public string? Token { get; set; }

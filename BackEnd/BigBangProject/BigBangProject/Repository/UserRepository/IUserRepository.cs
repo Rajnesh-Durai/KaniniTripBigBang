@@ -14,6 +14,8 @@ namespace BigBangProject.Repository.UserRepository
         Task<List<Booking>> BookPackage(Booking booking);
         Task<string?> GetEmailById(int Id);
         Task<List<Feedback>> PostFeedback(Feedback feedback);
-
+        Task<SightSeeing> GetSpotByName(string name);
+        Task<Hotel> GetHotelByName(string name);
+        Task<Package> GetPackageById(int Id);
     }
 }

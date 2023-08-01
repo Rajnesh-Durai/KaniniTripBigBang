@@ -14,12 +14,15 @@ namespace BigBangProject.Controllers
         [HttpGet("Get LocationId")]
         public async Task<ActionResult<int?>> GetIdByLocationName(string locationName)
         {
-            var obj = await _agentService.GetIdByLocationName(locationName);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _agentService.GetIdByLocationName(locationName);
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

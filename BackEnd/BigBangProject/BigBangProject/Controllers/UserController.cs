@@ -19,64 +19,85 @@ namespace BigBangProject.Controllers
         [HttpGet("Displaying All Locations")]
         public async Task<ActionResult<List<LocationDTO>>> GetLocation()
         {
-            var obj = await _context.GetLocation();
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.GetLocation();
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpGet("Get Package")]
         public async Task<ActionResult<List<PackageDTO>?>> GetAllPackage(int locationId)
         {
-            var obj = await _context.GetAllPackage(locationId);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.GetAllPackage(locationId);
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("Get Particular Package Details")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDayScheduleForPackage(int packageId)
         {
-            var obj = await _context.GetDayScheduleForPackage(packageId);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.GetDayScheduleForPackage(packageId);
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("Booking a Package")]
         public async Task<ActionResult<List<Booking>>> BookPackage(Booking booking)
         {
-            var obj = await _context.BookPackage(booking);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.BookPackage(booking);
+                return Ok(obj);
             }
-            return Ok(obj);
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpGet("Get Email By Id")]
         public async Task<ActionResult<string>?> GetEmailById(int Id)
         {
-            var obj = await _context.GetEmailById(Id);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.GetEmailById(Id);
+                return Ok(obj);
             }
-            return Ok(obj);
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpPost("Posting Feedback")]
         public async Task<ActionResult<List<Feedback>>> PostFeedback(Feedback feedback)
         {
-            var obj = await _context.PostFeedback(feedback);
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.PostFeedback(feedback);
+                return Ok(obj);
             }
-            return Ok(obj);
+
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

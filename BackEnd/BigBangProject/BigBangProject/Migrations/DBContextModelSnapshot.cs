@@ -49,8 +49,7 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("PhoneNumber")
                         .HasColumnType("bigint");
@@ -358,8 +357,7 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("PhoneNumber")
                         .HasColumnType("bigint");

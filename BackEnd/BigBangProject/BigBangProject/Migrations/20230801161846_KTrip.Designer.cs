@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BigBangProject.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20230801141630_KaniniTrips")]
-    partial class KaniniTrips
+    [Migration("20230801161846_KTrip")]
+    partial class KTrip
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,8 +52,7 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("PhoneNumber")
                         .HasColumnType("bigint");
@@ -361,8 +360,7 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("PhoneNumber")
                         .HasColumnType("bigint");

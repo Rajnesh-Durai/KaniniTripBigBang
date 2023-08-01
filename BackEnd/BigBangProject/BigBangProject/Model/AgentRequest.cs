@@ -21,8 +21,6 @@ namespace BigBangProject.Model
         [StringLength(20, ErrorMessage = "Username cannot exceed 20 characters.")]
         public string? Username { get; set; }
 
-        [Required(ErrorMessage = "Password is required.")]
-        [StringLength(20, ErrorMessage = "Password cannot exceed 20 characters.")]
         public string Password { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Role is required.")]

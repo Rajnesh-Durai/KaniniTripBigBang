@@ -1,4 +1,5 @@
-﻿using BigBangProject.Model;
+﻿using BigBangProject.GlobalException;
+using BigBangProject.Model;
 using BigBangProject.Repository.AdminRepository;
 
 namespace BigBangProject.Services.AdminService
@@ -13,11 +14,19 @@ namespace BigBangProject.Services.AdminService
         public async Task<List<AgentRequest>> GetRequest()
         {
             var item = await _adminRepo.GetRequest();
+            if(item ==null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return item;
         }
         public async Task<List<AgentRequest>> PostRequest(AgentRequest agentRequest)
         {
             var item = await _adminRepo.PostRequest(agentRequest);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
             return item;
         }
     }

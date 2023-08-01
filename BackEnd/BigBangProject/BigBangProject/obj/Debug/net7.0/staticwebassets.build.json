@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e4FYfq3pisXiFO0msCPuSCB1ICULMvYgRjLHHwiThm4=",
+  "Hash": "b8xMjok/Qw3/i3sFVyq0vFlQ+7BnxjRQ0Xjs34HJ3Uc=",
   "Source": "BigBangProject",
   "BasePath": "_content/BigBangProject",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\maldives-i235408436.jpg",
+      "SourceId": "BigBangProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\",
+      "BasePath": "_content/BigBangProject",
+      "RelativePath": "Images/maldives-i235408436.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\maldives-i235408436.jpg"
+    }
+  ]
 }

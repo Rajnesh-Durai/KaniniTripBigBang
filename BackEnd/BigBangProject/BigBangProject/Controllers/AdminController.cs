@@ -26,22 +26,30 @@ namespace BigBangProject.Controllers
         [HttpGet("Displaying All Request")]
         public async Task<ActionResult<List<AgentRequest>>> GetRequest()
         {
-            var obj = await _context.GetRequest();
-            if (obj == null)
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.GetRequest();
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
         [HttpPost("Posting A Request")]
         public async Task<ActionResult<List<AgentRequest>>> PostRequest(AgentRequest agentRequest)
         {
-            var obj = await _context.PostRequest(agentRequest);
-            if (obj == null)
+
+            try
             {
-                return NotFound("Cannot Display the List of Tables");
+                var obj = await _context.PostRequest(agentRequest);
+                return Ok(obj);
             }
-            return Ok(obj);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
         [HttpPost("Upload Image")]
         public async Task<ActionResult<Dashboard>> PostDashboardImage([FromForm] Dashboard dashboard)

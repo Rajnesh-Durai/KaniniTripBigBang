@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BigBangProject.Migrations
 {
     /// <inheritdoc />
-    public partial class KaniniTrips : Migration
+    public partial class KTrip : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,7 +20,7 @@ namespace BigBangProject.Migrations
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     AgencyName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Username = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: true),
@@ -68,7 +68,7 @@ namespace BigBangProject.Migrations
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
                     AgencyName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Username = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Token = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(25)", maxLength: 25, nullable: true),

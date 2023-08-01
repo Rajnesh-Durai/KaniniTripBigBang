@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\maldives-i235408436.jpg",
+      "PackagePath": "staticwebassets\\Images\\maldives-i235408436.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BigBangProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BigBangProject.props",
+      "PackagePath": "build\\BigBangProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BigBangProject.props",
+      "PackagePath": "buildMultiTargeting\\BigBangProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BigBangProject.props",
+      "PackagePath": "buildTransitive\\BigBangProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
