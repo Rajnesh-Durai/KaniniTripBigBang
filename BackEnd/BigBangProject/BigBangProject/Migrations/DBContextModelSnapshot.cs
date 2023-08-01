@@ -22,6 +22,57 @@ namespace BigBangProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("BigBangProject.Model.AgentRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AgencyName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<long?>("PhoneNumber")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("YearsOfExperience")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AgentRequests");
+                });
+
             modelBuilder.Entity("BigBangProject.Model.Booking", b =>
                 {
                     b.Property<int>("Id")
@@ -31,16 +82,17 @@ namespace BigBangProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("EndDate")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PersonLimit")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasColumnType("bit");
 
                     b.Property<int>("TotalCount")
                         .HasColumnType("int");
@@ -49,18 +101,31 @@ namespace BigBangProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PackageId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("Bookings");
+                });
+
+            modelBuilder.Entity("BigBangProject.Model.Dashboard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dashboards");
                 });
 
             modelBuilder.Entity("BigBangProject.Model.DaySchedule", b =>
@@ -74,27 +139,24 @@ namespace BigBangProject.Migrations
                     b.Property<int>("Daywise")
                         .HasColumnType("int");
 
-                    b.Property<int>("HotelId")
-                        .HasColumnType("int");
+                    b.Property<string>("HotelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PackageId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SightSeeingId")
-                        .HasColumnType("int");
+                    b.Property<string>("SpotName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VehicleId")
-                        .HasColumnType("int");
+                    b.Property<string>("VehicleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HotelId");
-
                     b.HasIndex("PackageId");
-
-                    b.HasIndex("SightSeeingId");
-
-                    b.HasIndex("VehicleId");
 
                     b.ToTable("DaySchedules");
                 });
@@ -108,7 +170,9 @@ namespace BigBangProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Comments")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -129,26 +193,37 @@ namespace BigBangProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BedType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Features")
+                    b.Property<string>("FoodDescription")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("HotelFeatures")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HotelImageName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HotelName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageName")
+                    b.Property<string>("MealsImageName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
 
                     b.Property<int>("Ratings")
                         .HasColumnType("int");
 
+                    b.Property<int>("SightSeeingId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("SightSeeingId");
 
                     b.ToTable("Hotels");
                 });
@@ -166,35 +241,12 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("LocationName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Locations");
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Meals", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FoodDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("HotelId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HotelId");
-
-                    b.ToTable("Mealss");
                 });
 
             modelBuilder.Entity("BigBangProject.Model.Package", b =>
@@ -208,16 +260,26 @@ namespace BigBangProject.Migrations
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Iternary")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<int?>("NumberOfDays")
+                        .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<string>("PackageDescription")
+                    b.Property<string>("PackageName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PersonLimit")
+                        .HasColumnType("int");
+
                     b.Property<int?>("PricePerPerson")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
@@ -241,6 +303,7 @@ namespace BigBangProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("DurationPerHour")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("ImageName")
@@ -249,35 +312,21 @@ namespace BigBangProject.Migrations
                     b.Property<int>("LocationId")
                         .HasColumnType("int");
 
+                    b.Property<string>("SpotAddress")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<string>("SpotName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("LocationId");
 
                     b.ToTable("SightSeeings");
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Transaction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BookingId")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BookingId");
-
-                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("BigBangProject.Model.User", b =>
@@ -289,23 +338,28 @@ namespace BigBangProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("AgencyName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<long?>("PhoneNumber")
                         .HasColumnType("bigint");
@@ -318,13 +372,15 @@ namespace BigBangProject.Migrations
 
                     b.Property<string>("Role")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int?>("YearsOfExperience")
                         .HasColumnType("int");
@@ -334,28 +390,6 @@ namespace BigBangProject.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("BigBangProject.Model.Vehicle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VehicleName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VehicleType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Vehicles");
-                });
-
             modelBuilder.Entity("BigBangProject.Model.Booking", b =>
                 {
                     b.HasOne("BigBangProject.Model.Package", null)
@@ -363,35 +397,13 @@ namespace BigBangProject.Migrations
                         .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("BigBangProject.Model.User", null)
-                        .WithMany("Bookings")
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("BigBangProject.Model.DaySchedule", b =>
                 {
-                    b.HasOne("BigBangProject.Model.Hotel", null)
-                        .WithMany("DaySchedules")
-                        .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BigBangProject.Model.Package", null)
                         .WithMany("DaySchedules")
                         .HasForeignKey("PackageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BigBangProject.Model.SightSeeing", null)
-                        .WithMany("DaySchedules")
-                        .HasForeignKey("SightSeeingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BigBangProject.Model.Vehicle", null)
-                        .WithMany("DaySchedules")
-                        .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -407,18 +419,9 @@ namespace BigBangProject.Migrations
 
             modelBuilder.Entity("BigBangProject.Model.Hotel", b =>
                 {
-                    b.HasOne("BigBangProject.Model.Location", null)
+                    b.HasOne("BigBangProject.Model.SightSeeing", null)
                         .WithMany("Hotels")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Meals", b =>
-                {
-                    b.HasOne("BigBangProject.Model.Hotel", null)
-                        .WithMany("Mealss")
-                        .HasForeignKey("HotelId")
+                        .HasForeignKey("SightSeeingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -447,31 +450,8 @@ namespace BigBangProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BigBangProject.Model.Transaction", b =>
-                {
-                    b.HasOne("BigBangProject.Model.Booking", null)
-                        .WithMany("Transactions")
-                        .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Booking", b =>
-                {
-                    b.Navigation("Transactions");
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Hotel", b =>
-                {
-                    b.Navigation("DaySchedules");
-
-                    b.Navigation("Mealss");
-                });
-
             modelBuilder.Entity("BigBangProject.Model.Location", b =>
                 {
-                    b.Navigation("Hotels");
-
                     b.Navigation("Packages");
 
                     b.Navigation("SightSeeings");
@@ -486,21 +466,14 @@ namespace BigBangProject.Migrations
 
             modelBuilder.Entity("BigBangProject.Model.SightSeeing", b =>
                 {
-                    b.Navigation("DaySchedules");
+                    b.Navigation("Hotels");
                 });
 
             modelBuilder.Entity("BigBangProject.Model.User", b =>
                 {
-                    b.Navigation("Bookings");
-
                     b.Navigation("Feedbacks");
 
                     b.Navigation("Packages");
-                });
-
-            modelBuilder.Entity("BigBangProject.Model.Vehicle", b =>
-                {
-                    b.Navigation("DaySchedules");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BigBang31to2\\BackEnd\\BigBangProject\\bigbangproject\\BigBangProject.csproj": {}
+    "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\BigBangProject.csproj": {}
   },
   "projects": {
-    "D:\\BigBang31to2\\BackEnd\\BigBangProject\\bigbangproject\\BigBangProject.csproj": {
+    "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\BigBangProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BigBang31to2\\BackEnd\\BigBangProject\\bigbangproject\\BigBangProject.csproj",
+        "projectUniqueName": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\BigBangProject.csproj",
         "projectName": "BigBangProject",
-        "projectPath": "D:\\BigBang31to2\\BackEnd\\BigBangProject\\bigbangproject\\BigBangProject.csproj",
+        "projectPath": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\BigBangProject.csproj",
         "packagesPath": "C:\\Users\\Rajesh Rajinish\\.nuget\\packages\\",
-        "outputPath": "D:\\BigBang31to2\\BackEnd\\BigBangProject\\bigbangproject\\obj\\",
+        "outputPath": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,6 +78,14 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.32.1, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
+            "xunit.extensibility.execution": {
+              "target": "Package",
+              "version": "[2.5.0, )"
             }
           },
           "imports": [

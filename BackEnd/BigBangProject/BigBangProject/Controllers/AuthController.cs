@@ -1,26 +1,31 @@
-﻿using BigBangProject.Helpers;
-using BigBangProject.Model.DTO;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Text;
-using BigBangProject.DataContext;
 using BigBangProject.Model;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
+using BigBangProject.Model.DTO;
+using BigBangProject.Helpers;
+using BigBangProject.DataContext;
 
 namespace BigBangProject.Controllers
 {
-    public class AuthController:ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AuthController : ControllerBase
     {
         private readonly DBContext _authContext;
-        private readonly PasswordHash _passwordHash;
-        public AuthController(DBContext authContext, IConfiguration configuration)
+
+        public AuthController (DBContext authContext)
         {
             _authContext = authContext;
-            _passwordHash = new PasswordHash(configuration);
         }
 
         [HttpPost("authenticate")]
@@ -35,7 +40,7 @@ namespace BigBangProject.Controllers
             if (user == null)
                 return NotFound(new { Message = "User not found!" });
 
-            if (!_passwordHash.VerifyPassword(userObj.Password, user.Password))
+            if (!PasswordHash.VerifyPassword(userObj.Password, user.Password))
             {
                 return BadRequest(new { Message = "Password is Incorrect" });
             }
@@ -51,7 +56,9 @@ namespace BigBangProject.Controllers
             {
                 AccessToken = newAccessToken,
                 RefreshToken = newRefreshToken,
-                Role = user.Role
+                Role=user.Role ,
+                UserId=user.Id ,
+                Name=user.Name 
             });
         }
 
@@ -73,8 +80,8 @@ namespace BigBangProject.Controllers
             if (!string.IsNullOrEmpty(passMessage))
                 return BadRequest(new { Message = passMessage.ToString() });
 
-            userObj.Password = _passwordHash.HashPassword(userObj.Password);
-            /*            userObj.Role = "User";*/
+            userObj.Password = PasswordHash.HashPassword(userObj.Password);
+/*            userObj.Role = "User";*/
             userObj.Token = "";
             await _authContext.AddAsync(userObj);
             await _authContext.SaveChangesAsync();
@@ -105,11 +112,11 @@ namespace BigBangProject.Controllers
         private string CreateJwt(User user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("veryverysceret.....");
+            var key = Encoding.ASCII.GetBytes("veryverysceret..................");
             var identity = new ClaimsIdentity(new Claim[]
             {
                 new Claim(ClaimTypes.Role, user.Role),
-                new Claim(ClaimTypes.Name,$"{user.Username}")
+                new Claim(ClaimTypes.Email,$"{user.Email}")
             });
 
             var credentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
@@ -140,7 +147,7 @@ namespace BigBangProject.Controllers
 
         private ClaimsPrincipal GetPrincipleFromExpiredToken(string token)
         {
-            var key = Encoding.ASCII.GetBytes("veryverysceret.....");
+            var key = Encoding.ASCII.GetBytes("veryverysceret..................");
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateAudience = false,
@@ -156,9 +163,10 @@ namespace BigBangProject.Controllers
             if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                 throw new SecurityTokenException("This is Invalid Token");
             return principal;
+
         }
 
-
+ 
         [HttpGet]
         public async Task<ActionResult<User>> GetAllUsers()
         {
@@ -173,7 +181,7 @@ namespace BigBangProject.Controllers
             string accessToken = tokenApiDto.AccessToken;
             string refreshToken = tokenApiDto.RefreshToken;
             var principal = GetPrincipleFromExpiredToken(accessToken);
-            var username = principal.Identity.Name;
+            var username = principal.Identity.Name ;
             var user = await _authContext.Users.FirstOrDefaultAsync(u => u.Username == username);
             if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
                 return BadRequest("Invalid Request");
@@ -185,6 +193,7 @@ namespace BigBangProject.Controllers
             {
                 AccessToken = newAccessToken,
                 RefreshToken = newRefreshToken,
+                Role = user.Role
             });
         }
 

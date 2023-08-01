@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "tHTDFmDQh0bq4LUjJhI1NRtEjqmV+Los5+41OP0MS6w=",
+  "Hash": "e4FYfq3pisXiFO0msCPuSCB1ICULMvYgRjLHHwiThm4=",
   "Source": "BigBangProject",
   "BasePath": "_content/BigBangProject",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BigBangProject\\wwwroot",
+      "Source": "BigBangProject",
+      "ContentRoot": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\",
+      "BasePath": "_content/BigBangProject",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

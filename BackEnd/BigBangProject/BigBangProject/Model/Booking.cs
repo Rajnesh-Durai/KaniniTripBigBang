@@ -8,17 +8,35 @@ namespace BigBangProject.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "User Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]
         public string? UserEmail { get; set; }
+
+        [Required(ErrorMessage = "PackageId is required.")]
         [ForeignKey("Package")]
         public int PackageId { get; set; }
-        [Column(TypeName = "Date")]
+
+        [Required(ErrorMessage = "Start Date is required.")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
-        [Column(TypeName = "Date")]
+
+        [Required(ErrorMessage = "End Date is required.")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
+
+        [Required(ErrorMessage = "Total Count is required.")]
+        [Range(1, 20, ErrorMessage = "Total Count must be a positive value.")]
         public int TotalCount { get; set; }
+
+        [Required(ErrorMessage = "Total Price is required.")]
+        [Range(0, int.MaxValue, ErrorMessage = "Total Price must be a non-negative value.")]
         public int TotalPrice { get; set; }
-        public int? PersonLimit { get; set; }
-        public ICollection<Transaction>? Transactions { get; set; }
+
+        [Required(ErrorMessage = "Status is required.")]
+        public bool? Status { get; set; }
 
     }
 }

@@ -9,7 +9,10 @@ namespace BigBangProject.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [ForeignKey("User")]
-        public int UserId { get; set; } 
+        public int UserId { get; set; }
+
+        [Required(ErrorMessage = "Password is required.")]
+        [StringLength(100, ErrorMessage = "Comments cannot exceed 100 characters.")]
         public string? Comments { get; set; }
     }
 }

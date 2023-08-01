@@ -1,5 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BigBangProject.Helpers;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Xunit.Abstractions;
+using Xunit.Sdk;
 
 namespace BigBangProject.Model
 {
@@ -8,19 +11,50 @@ namespace BigBangProject.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        [ForeignKey("SightSeeing")]
+        public int SightSeeingId { get; set; }
+
+        [Required(ErrorMessage = "Hotel name is required.")]
         public string? HotelName { get; set; }
-        [ForeignKey("Location")]
-        public int LocationId { get; set; }
-        public string? ImageName { get; set; }
+
+        public string? HotelImageName { get; set; }
+
         [NotMapped]
+        [Required(ErrorMessage = "Hotel image is required.")]
+        [AllowedExtensions(new string[] { ".jpg", ".jpeg", ".png", ".gif" }, ErrorMessage = "Invalid file format. Only .jpg, .jpeg, .png, and .gif are allowed.")]
+        [MaxFileSize(10 * 1024 * 1024, ErrorMessage = "Maximum file size allowed is 10MB.")]
         public IFormFile? HotelImage { get; set; }
+
         [NotMapped]
-        public string? ImageSrc { get; set; }
+        public string? HotelImageSrc { get; set; }
+
+        [Range(1, 5, ErrorMessage = "Ratings must be between 1 and 5.")]
         public int Ratings { get; set; }
+
+
+        [StringLength(100, ErrorMessage = "Comments cannot exceed 100 characters.")]
         public string? BedType { get; set; }
-        public string? Features { get; set; }
-        public ICollection<DaySchedule>? DaySchedules { get; set; }
-        public ICollection<Meals>? Mealss { get; set; }
+
+
+        [StringLength(100, ErrorMessage = "Features cannot exceed 100 characters.")]
+
+        public string? HotelFeatures { get; set; }
+
+        [Required(ErrorMessage = "Food description is required.")]
+        [StringLength(200, ErrorMessage = "Food description cannot exceed 200 characters.")]
+        public string? FoodDescription { get; set; }
+
+        public string? MealsImageName { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "Meals image is required.")]
+        [AllowedExtensions(new string[] { ".jpg", ".jpeg", ".png", ".gif" }, ErrorMessage = "Invalid file format. Only .jpg, .jpeg, .png, and .gif are allowed.")]
+        [MaxFileSize(10 * 1024 * 1024, ErrorMessage = "Maximum file size allowed is 10MB.")]
+        public IFormFile? MealsImage { get; set; }
+
+        [NotMapped]
+        public string? MealsImageSrc { get; set; }
 
     }
 }
