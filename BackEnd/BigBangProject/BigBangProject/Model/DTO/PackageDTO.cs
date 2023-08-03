@@ -9,5 +9,9 @@
         public int? NoOfVehicle { get;set;}
         public int? NoOfSpot { get; set; }
         public int? NoOfHotel { get; set; }
+        public string? HotelName { get; set; }
+        public string? SpotName { get; set; }
+        public string? VehicleName { get; set; }
+        public int? TotalDays { get; set; }
     }
 }

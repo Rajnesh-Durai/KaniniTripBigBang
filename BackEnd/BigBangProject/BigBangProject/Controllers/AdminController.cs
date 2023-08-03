@@ -23,63 +23,63 @@ namespace BigBangProject.Controllers
             _hostEnvironment = hostEnvironment;
             _dbContext = dbContext;
         }
-        [HttpGet("Displaying All Request")]
-        public async Task<ActionResult<List<AgentRequest>>> GetRequest()
+
+        [HttpGet("GetAllRequest")]
+        public async Task<ActionResult<List<User>>> GetRequest()
         {
             try
             {
-                var obj = await _context.GetRequest();
-                return Ok(obj);
+                var item = await _context.GetRequest();
+                return Ok(item);
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
         }
-        [HttpPost("Posting A Request")]
-        public async Task<ActionResult<List<AgentRequest>>> PostRequest(AgentRequest agentRequest)
+        [HttpPut("AgentAccepetance")]
+        public async Task<ActionResult<List<User>>> PutRequest(int? userId, User user)
         {
-
             try
             {
-                var obj = await _context.PostRequest(agentRequest);
-                return Ok(obj);
+                var item = await _context.PutRequest(userId,user);
+                return Ok(item);
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return NotFound(ex.Message);
             }
-
         }
-        [HttpPost("Upload Image")]
+        [HttpDelete("RejectAgentAccepetance")]
+        public async Task<ActionResult<List<User>>> DeleteRequest(int? userId)
+        {
+            try
+            {
+                var item = await _context.DeleteRequest( userId);
+                return Ok(item);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPost("UploadImage")]
         public async Task<ActionResult<Dashboard>> PostDashboardImage([FromForm] Dashboard dashboard)
         {
-            dashboard.ImageName = await SaveImage(dashboard.HotelImage);
-            _dbContext.Dashboards.Add(dashboard);
-            await _dbContext.SaveChangesAsync();
-            return StatusCode(201);
-        }
-
-        [NonAction]
-        public async Task<string> SaveImage(IFormFile imageFile)
-        {
-            string imageName = new String(Path.GetFileNameWithoutExtension(imageFile.FileName).Take(10).ToArray()).Replace(' ', '-');
-            imageName = imageName + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(imageFile.FileName);
-            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot/Images", imageName);
-            using (var fileStream = new FileStream(imagePath, FileMode.Create))
+            try
             {
-                await imageFile.CopyToAsync(fileStream);
+                var createdHotel = await _context.PostDashboardImage(dashboard);
+                return Ok(createdHotel);
+
             }
-            return imageName;
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
-        [NonAction]
-        public void DeleteImage(string imageName)
-        {
-            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "Images", imageName);
-            if (System.IO.File.Exists(imagePath))
-                System.IO.File.Delete(imagePath);
-        }
 
     }
 }

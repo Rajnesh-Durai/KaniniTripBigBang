@@ -21,6 +21,8 @@ namespace BigBangProject.Model
         public int LocationId { get; set; }
 
         [Required(ErrorMessage = "Package name is required.")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabets are allowed in the Name.")]
+        [StringLength(100, ErrorMessage = "PackageName cannot exceed 100 characters.")]
         public string? PackageName { get; set; }
 
         public string? ImageName { get; set; }

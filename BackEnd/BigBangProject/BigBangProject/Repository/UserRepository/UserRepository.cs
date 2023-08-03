@@ -3,6 +3,7 @@ using BigBangProject.GlobalException;
 using BigBangProject.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 
 namespace BigBangProject.Repository.UserRepository
@@ -10,9 +11,11 @@ namespace BigBangProject.Repository.UserRepository
     public class UserRepository:IUserRepository
     {
         private readonly DBContext _dbContext;
-        public UserRepository(DBContext dbContext)
+        private readonly IWebHostEnvironment _hostEnvironment;
+        public UserRepository(DBContext dbContext, IWebHostEnvironment hostEnvironment)
         {
             _dbContext = dbContext;
+            _hostEnvironment = hostEnvironment;
         }
         public async Task<List<Location>> GetLocation()
         {
@@ -23,14 +26,47 @@ namespace BigBangProject.Repository.UserRepository
             }
             return item;
         }
+        public async Task<Location> PostLocation([FromForm] Location location)
+        {
+            if (location == null)
+            {
+                throw new ArgumentException("Invalid file");
+            }
+
+            location.ImageName = await SaveImage(location.LocationImage);
+            _dbContext.Locations.Add(location);
+            await _dbContext.SaveChangesAsync();
+            return location;
+        }
         public async Task<List<Package>> GetAllPackage()
         {
             var total=await _dbContext.Packages.ToListAsync();
-            if (item == null)
+            if (total == null)
             {
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
             }
             return total;
+        }
+        public async Task<List<Package>> GetPackage(int locationId)
+        {
+            var total = await _dbContext.Packages.Where(s=>s.LocationId==locationId).ToListAsync();
+            if (total == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return total;
+        }
+        public async Task<Package> PostPackage([FromForm] Package package)
+        {
+            if (package == null)
+            {
+                throw new ArgumentException("Invalid file");
+            }
+
+            package.ImageName = await SaveImage(package.PackageImage);
+            _dbContext.Packages.Add(package);
+            await _dbContext.SaveChangesAsync();
+            return package;
         }
         public async Task<List<Hotel>> GetAllHotels()
         {
@@ -41,7 +77,18 @@ namespace BigBangProject.Repository.UserRepository
             }
             return item;
         }
+        public async Task<Hotel> PostHotel([FromForm] Hotel hotel)
+        {
+            if (hotel == null)
+            {
+                throw new ArgumentException("Invalid file");
+            }
 
+            hotel.HotelImageName = await SaveImage(hotel.HotelImage);
+            _dbContext.Hotels.Add(hotel);
+            await _dbContext.SaveChangesAsync();
+            return hotel;
+        }
         public async Task<List<SightSeeing>> GetAllSightSeeing()
         {
             var item = await _dbContext.SightSeeings.ToListAsync();
@@ -51,13 +98,21 @@ namespace BigBangProject.Repository.UserRepository
             }
             return item;
         }
-        public async Task<List<DaySchedule>> GetAllDaySchedule(int locationId)
+        public async Task<SightSeeing> PostSightSeeing([FromForm] SightSeeing spot)
         {
-            var daySchedules = await (from pack in _dbContext.Packages
-                                      join day in _dbContext.DaySchedules on pack.Id equals day.PackageId
-                                      where pack.LocationId == locationId
-                                      select day
-                ).ToListAsync();
+            if (spot == null)
+            {
+                throw new ArgumentException("Invalid file");
+            }
+
+            spot.ImageName = await SaveImage(spot.SpotImage);
+            _dbContext.SightSeeings.Add(spot);
+            await _dbContext.SaveChangesAsync();
+            return spot;
+        }
+        public async Task<List<DaySchedule>> GetAllDaySchedule()
+        {
+            var daySchedules = await _dbContext.DaySchedules.ToListAsync();
             if (daySchedules == null)
             {
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
@@ -69,7 +124,7 @@ namespace BigBangProject.Repository.UserRepository
             var list=await _dbContext.DaySchedules.Where(s=>s.PackageId == packageId).ToListAsync();
             if (list == null)
             {
-                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+                throw new Exception(CustomException.ExceptionMessages["NoId"]);
             }
             return list;
         }
@@ -108,7 +163,7 @@ namespace BigBangProject.Repository.UserRepository
 
         public async Task<SightSeeing> GetSpotByName(string name)
         {
-            var item= await _dbContext.SightSeeings.FirstOrDefaultAsync(s=>s.SpotName == name);
+            var item= await _dbContext.SightSeeings.FirstOrDefaultAsync(s=>s.SpotAddress == name);
             if (item == null)
             {
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
@@ -132,6 +187,48 @@ namespace BigBangProject.Repository.UserRepository
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
             }
             return item;
+        }
+
+        public async Task<SightSeeing> GetSightSeeingBySpotName(string spot)
+        {
+            var item = await _dbContext.SightSeeings.FirstOrDefaultAsync(s=>s.SpotName== spot);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<Hotel> GetHotelsBySightSeeingId(int locationId)
+        {
+            var item = await _dbContext.Hotels.FirstOrDefaultAsync(s => s.SightSeeingId == locationId);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<List<Dashboard>> GetAllDashboard()
+        {
+            var item =await _dbContext.Dashboards.ToListAsync();
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        
+        }
+
+        [NonAction]
+        public async Task<string> SaveImage(IFormFile imageFile)
+        {
+            string imageName = new String(Path.GetFileNameWithoutExtension(imageFile.FileName).Take(10).ToArray()).Replace(' ', '-');
+            imageName = imageName + DateTime.Now.ToString("yymmssfff") + Path.GetExtension(imageFile.FileName);
+            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "wwwroot/Images", imageName);
+            using (var fileStream = new FileStream(imagePath, FileMode.Create))
+            {
+                await imageFile.CopyToAsync(fileStream);
+            }
+            return imageName;
         }
     }
 }

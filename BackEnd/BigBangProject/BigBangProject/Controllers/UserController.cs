@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BigBangProject.Controllers
 {
-    [Route("User Side")]
+    [Route("UserSide")]
     [ApiController]
     public class UserController:ControllerBase
     {
@@ -16,7 +16,7 @@ namespace BigBangProject.Controllers
             _context = context;
         }
 
-        [HttpGet("Displaying All Locations")]
+        [HttpGet("DisplayingAllLocations")]
         public async Task<ActionResult<List<LocationDTO>>> GetLocation()
         {
             try
@@ -29,7 +29,7 @@ namespace BigBangProject.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpGet("Get Package")]
+        [HttpGet("GetPackage")]
         public async Task<ActionResult<List<PackageDTO>?>> GetAllPackage(int locationId)
         {
             try
@@ -43,7 +43,7 @@ namespace BigBangProject.Controllers
             }
         }
 
-        [HttpGet("Get Particular Package Details")]
+        [HttpGet("GetParticularPackageDetails")]
         public async Task<ActionResult<List<ScheduleDTO>>> GetDayScheduleForPackage(int packageId)
         {
             try
@@ -57,7 +57,7 @@ namespace BigBangProject.Controllers
             }
         }
 
-        [HttpPost("Booking a Package")]
+        [HttpPost("BookingAPackage")]
         public async Task<ActionResult<List<Booking>>> BookPackage(Booking booking)
         {
             try
@@ -71,7 +71,7 @@ namespace BigBangProject.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpGet("Get Email By Id")]
+        [HttpGet("GetEmailById")]
         public async Task<ActionResult<string>?> GetEmailById(int Id)
         {
             try
@@ -85,7 +85,7 @@ namespace BigBangProject.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPost("Posting Feedback")]
+        [HttpPost("PostingFeedback")]
         public async Task<ActionResult<List<Feedback>>> PostFeedback(Feedback feedback)
         {
             try
@@ -94,6 +94,80 @@ namespace BigBangProject.Controllers
                 return Ok(obj);
             }
 
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPost("PostPackage")]
+        public async Task<ActionResult<Package>> PostPackage([FromForm] Package package)
+        {
+            try
+            {
+                var createdHotel = await _context.PostPackage(package);
+                return Ok(createdHotel);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpPost("PostLocation")]
+        public async Task<ActionResult<Location>> PostLocation([FromForm] Location location)
+        {
+            try
+            {
+                var createdHotel = await _context.PostLocation(location);
+                return Ok(createdHotel);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpPost("PostHotel")]
+        public async Task<ActionResult<Hotel>> PostHotel([FromForm] Hotel hotel)
+        {
+            try
+            {
+                var createdHotel = await _context.PostHotel(hotel);
+                return Ok(createdHotel);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpPost("PostSpot")]
+        public async Task<ActionResult<SightSeeing>> PostSightSeeing([FromForm] SightSeeing spot)
+        {
+            try
+            {
+                var createdHotel = await _context.PostSightSeeing(spot);
+                return Ok(createdHotel);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+        [HttpGet("GetDashboardImage")]
+        public async Task<ActionResult<List<Dashboard>>> GetAllDashboard()
+        {
+            try
+            {
+                var createdHotel = await _context.GetAllDashboard();
+                return Ok(createdHotel);
+
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);

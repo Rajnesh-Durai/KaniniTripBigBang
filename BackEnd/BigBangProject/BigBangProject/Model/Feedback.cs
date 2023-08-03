@@ -14,5 +14,6 @@ namespace BigBangProject.Model
         [Required(ErrorMessage = "Password is required.")]
         [StringLength(100, ErrorMessage = "Comments cannot exceed 100 characters.")]
         public string? Comments { get; set; }
+        public int Rating { get;set; }
     }
 }

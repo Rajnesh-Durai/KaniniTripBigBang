@@ -9,7 +9,6 @@ namespace BigBangProject.DataContext
         {
 
         }
-        public DbSet<AgentRequest> AgentRequests { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<DaySchedule> DaySchedules { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }

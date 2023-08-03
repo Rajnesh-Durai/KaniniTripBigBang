@@ -3,15 +3,19 @@ using BigBangProject.Model;
 using BigBangProject.Model.DTO;
 using BigBangProject.Repository.UserRepository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace BigBangProject.Services.UserService
 {
-    public class UserService:IUserService
+    public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
+
+        private readonly IWebHostEnvironment _hostEnvironment;
+        public UserService(IUserRepository userRepository, IWebHostEnvironment hostEnvironment)
         {
             _userRepository = userRepository;
+            _hostEnvironment = hostEnvironment;
         }
         public async Task<List<LocationDTO>> GetLocation()
         {
@@ -35,29 +39,47 @@ namespace BigBangProject.Services.UserService
         }
         public async Task<List<PackageDTO>?> GetAllPackage(int locationId)
         {
-            var package= await _userRepository.GetAllPackage();
-            var day = await _userRepository.GetAllDaySchedule(locationId);
+            var packages = await _userRepository.GetPackage(locationId);
+            var day = await _userRepository.GetAllDaySchedule();
 
-            var items = (from pack in package
+            var items = (from pack in packages
                          join schedule in day on pack.Id equals schedule.PackageId
-                         where pack.LocationId == locationId
+                         where pack.Id == schedule.PackageId
                          select new PackageDTO()
                          {
-                             PackageId=pack.Id,
+                             PackageId = pack.Id,
                              PackageName = pack.PackageName,
-                             Iternary= pack.Iternary,
-                             NoOfHotel = day.Select(d => d.HotelName).Distinct().Count(),
-                             NoOfSpot = day.Select(d => d.SpotName).Distinct().Count(),
-                             NoOfVehicle = day.Select(d => d.VehicleName).Distinct().Count(),
-                             PricePerPerson =pack.PricePerPerson
+                             Iternary = pack.Iternary,
+                             HotelName = schedule.HotelName, // Include HotelName in PackageDTO
+                             SpotName = schedule.SpotName,   // Include SpotName in PackageDTO
+                             VehicleName = schedule.VehicleName, // Include VehicleName in PackageDTO
+                             PricePerPerson = pack.PricePerPerson,
+                             TotalDays=pack.NumberOfDays
                          }
-                        ).ToList();
+               ).ToList();
+
             if (items == null)
             {
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
             }
-            return items;
+
+            // Group the items based on PackageId and calculate NoOfHotel, NoOfSpot, and NoOfVehicle
+            var groupedItems = items.GroupBy(item => item.PackageId)
+                                    .Select(group => new PackageDTO()
+                                    {
+                                        PackageId = group.Key,
+                                        PackageName = group.First().PackageName,
+                                        Iternary = group.First().Iternary,
+                                        NoOfHotel = group.Select(item => item.HotelName).Distinct().Count(),
+                                        NoOfSpot = group.Select(item => item.SpotName).Distinct().Count(),
+                                        NoOfVehicle = group.Select(item => item.VehicleName).Count(),
+                                        PricePerPerson = group.First().PricePerPerson,
+                                        TotalDays=group.First().TotalDays
+                                    }).ToList();
+
+            return groupedItems;
         }
+    
         public async Task<List<ScheduleDTO>> GetDayScheduleForPackage(int packageId)
         {
             var daySchedules = await _userRepository.GetDayScheduleForPackage(packageId);
@@ -74,8 +96,8 @@ namespace BigBangProject.Services.UserService
                 }
                 else
                 {
-                    var spot = await _userRepository.GetSpotByName(daySchedule.SpotName ?? "");
-                    var hotel = await _userRepository.GetHotelByName(daySchedule.HotelName ?? "");
+                    var spot = await _userRepository.GetSpotByName(daySchedule.SpotName);
+                    var hotel = await _userRepository.GetHotelByName(daySchedule.HotelName);
 
                     var dayWiseSchedule = new ScheduleDTO
                     {
@@ -130,6 +152,81 @@ namespace BigBangProject.Services.UserService
                 throw new ArgumentNullException(CustomException.ExceptionMessages["CantEmpty"]);
             }
             return item;
+        }
+
+        public async Task<Package> PostPackage([FromForm] Package package)
+        {
+            if (package == null)
+            {
+                throw new Exception("Invalid file");
+            }
+            var item = await _userRepository.PostPackage(package);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<Location> PostLocation([FromForm] Location location)
+        {
+            if (location == null)
+            {
+                throw new Exception("Invalid file");
+            }
+            var item = await _userRepository.PostLocation(location);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<Hotel> PostHotel([FromForm] Hotel hotel)
+        {
+            if (hotel == null)
+            {
+                throw new Exception("Invalid file");
+            }
+            var item = await _userRepository.PostHotel(hotel);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<SightSeeing> PostSightSeeing([FromForm] SightSeeing spot)
+        {
+            if (spot == null)
+            {
+                throw new Exception("Invalid file");
+            }
+            var item = await _userRepository.PostSightSeeing(spot);
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+        public async Task<List<Dashboard>> GetAllDashboard()
+        {
+            var get = await _userRepository.GetAllDashboard();
+            var imageList = new List<Dashboard>();
+            foreach (var image in get)
+            {
+                var uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "Images");
+                var filePath = Path.Combine(uploadsFolder, image.ImageName);
+
+                var imageBytes = System.IO.File.ReadAllBytes(filePath);
+                var tourData = new Dashboard
+                {
+                    Id = image.Id,
+                    Name = image.Name,
+                    Description = image.Description,
+                    ImageSrc = image.ImageSrc,
+                    ImageName = Convert.ToBase64String(imageBytes)
+                };
+                imageList.Add(tourData);
+            }
+            return imageList;
         }
     }
 }

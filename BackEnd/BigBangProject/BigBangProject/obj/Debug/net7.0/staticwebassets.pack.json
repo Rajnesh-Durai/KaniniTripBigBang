@@ -1,8 +1,260 @@
 {
   "Files": [
     {
-      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\maldives-i235408436.jpg",
-      "PackagePath": "staticwebassets\\Images\\maldives-i235408436.jpg"
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\Kashmir235634085.jpg",
+      "PackagePath": "staticwebassets\\Images\\Kashmir235634085.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\Sinthan_To231246540.jpg",
+      "PackagePath": "staticwebassets\\Images\\Sinthan_To231246540.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agra-fort230953196.jpg",
+      "PackagePath": "staticwebassets\\Images\\agra-fort230953196.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agra230931955.jpg",
+      "PackagePath": "staticwebassets\\Images\\agra230931955.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agra234118427.jpg",
+      "PackagePath": "staticwebassets\\Images\\agra234118427.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agra235604746.jpg",
+      "PackagePath": "staticwebassets\\Images\\agra235604746.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agrap2234149858.jpg",
+      "PackagePath": "staticwebassets\\Images\\agrap2234149858.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agrap3234333596.jpg",
+      "PackagePath": "staticwebassets\\Images\\agrap3234333596.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\agrap4234253870.jpg",
+      "PackagePath": "staticwebassets\\Images\\agrap4234253870.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\alleppey233042923.jpg",
+      "PackagePath": "staticwebassets\\Images\\alleppey233042923.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\beautiful-231628004.jpg",
+      "PackagePath": "staticwebassets\\Images\\beautiful-231628004.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\dal231142618.jpg",
+      "PackagePath": "staticwebassets\\Images\\dal231142618.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\fateh231052107.jpg",
+      "PackagePath": "staticwebassets\\Images\\fateh231052107.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goa235550912.jpg",
+      "PackagePath": "staticwebassets\\Images\\goa235550912.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goab1233142226.jpg",
+      "PackagePath": "staticwebassets\\Images\\goab1233142226.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goab2233157917.jpg",
+      "PackagePath": "staticwebassets\\Images\\goab2233157917.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goab3233215993.jpg",
+      "PackagePath": "staticwebassets\\Images\\goab3233215993.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goab4233238912.jpg",
+      "PackagePath": "staticwebassets\\Images\\goab4233238912.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goap1233838776.jpg",
+      "PackagePath": "staticwebassets\\Images\\goap1233838776.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goap2233913687.jpg",
+      "PackagePath": "staticwebassets\\Images\\goap2233913687.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goap3234026171.jpg",
+      "PackagePath": "staticwebassets\\Images\\goap3234026171.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goap4233958902.jpg",
+      "PackagePath": "staticwebassets\\Images\\goap4233958902.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230015863.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230015863.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230031494.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230031494.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230642243.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230642243.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230652600.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230652600.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230653410.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230653410.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1230654264.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1230654264.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1235607031.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1235607031.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel1235823266.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel1235823266.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230305763.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230305763.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230525091.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230525091.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230733141.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230733141.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230757786.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230757786.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230758642.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230758642.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2230806289.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2230806289.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2235640459.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2235640459.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel2235857269.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel2235857269.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel3230054099.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel3230054099.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel3235716488.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel3235716488.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel3235954173.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel3235954173.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230216815.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230216815.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230239297.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230239297.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230550023.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230550023.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230602797.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230602797.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230608496.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230608496.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4230609447.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4230609447.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4235755654.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4235755654.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\hotel4235934547.jpg",
+      "PackagePath": "staticwebassets\\Images\\hotel4235934547.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kashp1234535621.jpg",
+      "PackagePath": "staticwebassets\\Images\\kashp1234535621.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kashp2234620939.jpg",
+      "PackagePath": "staticwebassets\\Images\\kashp2234620939.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kashp3234706680.jpg",
+      "PackagePath": "staticwebassets\\Images\\kashp3234706680.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kashp4234748611.jpg",
+      "PackagePath": "staticwebassets\\Images\\kashp4234748611.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kerala235515269.jpg",
+      "PackagePath": "staticwebassets\\Images\\kerala235515269.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap1233302438.jpg",
+      "PackagePath": "staticwebassets\\Images\\keralap1233302438.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap2233355106.jpg",
+      "PackagePath": "staticwebassets\\Images\\keralap2233355106.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap2233447290.jpg",
+      "PackagePath": "staticwebassets\\Images\\keralap2233447290.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap2233558405.jpg",
+      "PackagePath": "staticwebassets\\Images\\keralap2233558405.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap3233632079.jpg",
+      "PackagePath": "staticwebassets\\Images\\keralap3233632079.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kumily233011289.jpg",
+      "PackagePath": "staticwebassets\\Images\\kumily233011289.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\maldives-i231508246.jpg",
+      "PackagePath": "staticwebassets\\Images\\maldives-i231508246.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\munnar232939750.jpg",
+      "PackagePath": "staticwebassets\\Images\\munnar232939750.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\nishat231213196.jpg",
+      "PackagePath": "staticwebassets\\Images\\nishat231213196.jpg"
+    },
+    {
+      "Id": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\winter232446200.jpg",
+      "PackagePath": "staticwebassets\\Images\\winter232446200.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BigBangProject.Microsoft.AspNetCore.StaticWebAssets.props",

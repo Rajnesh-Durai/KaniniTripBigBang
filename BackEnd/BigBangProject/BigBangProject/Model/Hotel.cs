@@ -16,6 +16,8 @@ namespace BigBangProject.Model
         public int SightSeeingId { get; set; }
 
         [Required(ErrorMessage = "Hotel name is required.")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabets are allowed in the Name.")]
+        [StringLength(30, ErrorMessage = "PackageName cannot exceed 30 characters.")]
         public string? HotelName { get; set; }
 
         public string? HotelImageName { get; set; }

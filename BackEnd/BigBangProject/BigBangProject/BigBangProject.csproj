@@ -14,10 +14,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\AuthRepository\ICrudRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\1e0c6703-b066-4463-a891-69795d530a54.jpg" />
+    <Content Remove="wwwroot\Images\357ffc6a-a391-4341-9c67-587fbf5c04dd.jpg" />
+    <Content Remove="wwwroot\Images\36e1a013-8818-46b8-a8ac-272df5c5a76e.jpg" />
+    <Content Remove="wwwroot\Images\44ceba0f-94b5-40b0-a1ff-0a0453d2eeb0.jpg" />
+    <Content Remove="wwwroot\Images\64bc3252-b7c6-458c-8c81-95bfe77fca5a.jpg" />
+    <Content Remove="wwwroot\Images\6d6ab5d0-d48f-424b-81d2-d96484165178.jpg" />
+    <Content Remove="wwwroot\Images\88c61417-4177-4f80-9fc7-71508743af8d.jpg" />
+    <Content Remove="wwwroot\Images\beautiful-230214904.jpg" />
+    <Content Remove="wwwroot\Images\e0a7381f-30a3-4c4b-a9b1-134c61427d0c.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i230031451.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i232819476.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i233518650.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i234607135.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i234629827.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i234731615.jpg" />
     <Content Remove="wwwroot\Images\maldives-i234857270.jpg" />
     <Content Remove="wwwroot\Images\maldives-i234920666.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i234926225.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i235016053.jpg" />
     <Content Remove="wwwroot\Images\maldives-i235041472.jpg" />
     <Content Remove="wwwroot\Images\maldives-i235046441.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i235408436.jpg" />
+    <Content Remove="wwwroot\Images\maldives-i235717636.jpg" />
   </ItemGroup>
 
   <ItemGroup>

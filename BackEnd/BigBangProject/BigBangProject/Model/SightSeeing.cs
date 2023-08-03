@@ -16,7 +16,8 @@ namespace BigBangProject.Model
         public int LocationId { get; set; }
 
         [Required(ErrorMessage = "Spot name is required.")]
-        [StringLength(100, ErrorMessage = "Spot name cannot exceed 100 characters.")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabets are allowed in the Name.")]
+        [StringLength(30, ErrorMessage = "SpotName cannot exceed 30 characters.")]
         public string? SpotName { get; set; }
 
         public string? ImageName { get; set; }
