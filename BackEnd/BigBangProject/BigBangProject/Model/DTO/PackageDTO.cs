@@ -13,5 +13,6 @@
         public string? SpotName { get; set; }
         public string? VehicleName { get; set; }
         public int? TotalDays { get; set; }
+        public string? ImageName { get; set; }
     }
 }

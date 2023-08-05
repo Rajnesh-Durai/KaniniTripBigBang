@@ -1,0 +1,20 @@
+.flex-packageDetails
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.position-center
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+.package-name{
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+}
+.price-flex{
+    display: flex;
+    justify-content: space-between;
+}

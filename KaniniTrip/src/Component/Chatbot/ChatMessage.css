@@ -1,0 +1,33 @@
+.message-right {
+    background: #1589CC; /* Light blue background */
+    border-radius: 25px;
+    padding: 0.5em 1em;
+    margin: 1em;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    margin-left: auto; /* Move user message to the right */
+    color: white;
+  }
+  
+  .message-left {
+    background: #0ca243; /* Light gray background */
+    border-radius: 25px;
+    padding: 0.5em 1em;
+    margin: 1em;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    color: #fff;
+  }
+  
+  .message-text {
+    font-size: 20px;
+    margin-left: 15px;
+    width: auto;
+  }
+  

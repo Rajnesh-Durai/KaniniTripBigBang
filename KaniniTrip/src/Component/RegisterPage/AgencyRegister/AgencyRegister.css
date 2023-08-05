@@ -1,0 +1,130 @@
+*{
+    font-family: 'Manrope';
+}
+.containers2
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input{
+    border: none;
+    font-size: 20px;
+    line-height: 3rem;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-left: 15px;
+    width: 180%;
+    background: transparent;
+}
+.input:focus{
+    outline: none;
+}
+.input:active{
+    background-color: #fff;
+}
+.split{
+    display: flex;
+    margin-top: 60px;
+}
+
+.spliter1{
+    width: 120%;
+}
+.flexprop{
+    display: flex;
+    justify-content: space-between;
+}
+
+.head{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 130px;
+    color: black;
+}
+hr{
+    margin-bottom: 0px;
+}
+.butn{
+    margin-top: 30px;
+    width: 150px;
+    height: 60px;
+    pad: 15px;
+    font-size: 24px;
+    color: #fff;
+    background-color:#1589CC ;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    margin-bottom: 20px;
+}
+.butn:hover{
+    background-color: #0f97e6;
+    translate: 0px -8px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.width{
+    width: 500px;
+}
+.image{
+    margin-left: 25px;
+    width: 950px;
+    height: 800px;
+}
+.member{
+    display: flex;
+    justify-content: end;
+    text-decoration: underline;
+    margin-right: 140px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+.member:hover{
+    color: #0f97e6;
+}
+.error{
+    color: red;
+}
+.bgImage
+{
+    background-image: url(../../../Assets/map.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(0,0,0,0.5);
+    background-position: center;
+    overflow-y: hidden;
+    scrollbar-width:none;
+&::-webkit-scrollbar{
+  display:none;
+}
+}
+.seperation
+{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.success-modal2 {
+    background-color: #dff0d8; /* Success background color */
+    color: #3c763d; /* Success font color */
+  }
+  
+  /* Center the modal at the bottom of the screen */
+  .success-modal2 .modal-dialog {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    margin: 0;
+  }
+  .position2{
+    top: 80%;
+  }

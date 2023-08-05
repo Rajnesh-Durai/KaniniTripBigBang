@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using BigBangProject.Repository.AgentRepository;
+using BigBangProject.Services.AgentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +26,9 @@ builder.Services.AddDbContext<BigBangProject.DataContext.DBContext>(optionsActio
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IAgentRepository, AgentRepository>();
+builder.Services.AddScoped<AgentRepository, AgentRepository>();
+builder.Services.AddScoped<IAgentService, AgentService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICrudRepo<User, UserDTO>, CrudRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();

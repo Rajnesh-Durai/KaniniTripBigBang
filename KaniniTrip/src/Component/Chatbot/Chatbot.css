@@ -1,0 +1,107 @@
+.kanini {
+    width: 160px;
+    height: 60px;
+  }
+  
+  .search {
+    width: 450px;
+    height: 40px;
+    font-family: 'Manrope';
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+    border: 1px solid #128c7e;
+  }
+  
+  .search:focus {
+    outline: none;
+  }
+  
+  .flexing {
+    display: flex;
+    align-items: center;
+  }
+  
+  .align {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .chat-message {
+    padding: 1em;
+    max-height: 350px; /* Reduce the max height to fit the screen */
+    overflow-y: auto;
+    border-radius: 25px;
+    color: #333;
+    overflow-y: auto;
+    margin: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add the background image */
+  background-image: url('../../Assets/chat-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+  
+  .chat {
+    width: 450px; /* Reduced the width for a compact design */
+    height: fit-content;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    z-index: 999;
+    background-color: #fff; /* Light gray background */
+    position: fixed;
+    bottom: 100px; /* Adjusted the position to keep it above the input and send button */
+    right: 40px;
+    overflow-y: hidden;
+  }
+  
+  .send {
+    background-color: #128c7e; /* WhatsApp green color */
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .send:hover {
+    background-color: #128c7e; /* Darker green on hover */
+  }
+  
+  .send-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Scrollbar styling */
+  .chat-message::-webkit-scrollbar {
+    display: none;
+    background-color: #f9f9f9;
+  }
+  
+  .chat-message::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 3px;
+  }
+  
+  .chat-message::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+  }
+  
+  /* Media query to adjust chat width for smaller screens */
+  @media (max-width: 420px) {
+    .chat {
+      width: 320px;
+    }
+  }
+  

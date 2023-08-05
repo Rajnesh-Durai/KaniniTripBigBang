@@ -1,0 +1,44 @@
+.package-head{
+    font-size: 72px;
+    font-weight: 800;
+    position: absolute;
+    top: 350px;
+    left: 40%;
+    color: white;
+    box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+    cursor: pointer;
+}
+
+.card-image{
+    height: 300px;
+}
+.card-location
+{
+    cursor: pointer;
+    transition: 0.2s;
+}
+.card-location:hover{
+    translate: 0px -8px;
+}
+.location-name{
+    font-weight: 600;
+    font-size: 26px;
+    color: black;
+}
+.location-body
+{
+    background-color: white;
+}
+.location-price
+{
+    font-size: 22px;
+    color: black;
+    font-weight: 500;
+}
+.package-heading
+{
+    font-size: 38px;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 55px;
+}

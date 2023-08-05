@@ -1,0 +1,104 @@
+*{
+    font-family: 'Manrope';
+}
+.containers
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input{
+    border: none;
+    font-size: 20px;
+    line-height: 3rem;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    margin-left: 15px;
+    width: 200%;
+}
+.input:focus{
+    outline: none;
+}
+.input:active{
+    background-color: #fff;
+}
+.splituser{
+    display: flex;
+}
+.split1{
+    width: 50%;
+}
+.split2{
+    margin-top: 80px;
+}
+.head{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+hr{
+    margin-bottom: 0px;
+}
+.butn{
+    margin-top: 30px;
+    width: 150px;
+    height: 60px;
+    pad: 15px;
+    font-size: 24px;
+    color: #fff;
+    background-color:#1589CC ;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.butn:hover{
+    background-color: #0f97e6;
+    translate: 0px -8px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.image{
+    margin-left: 25px;
+    width: 950px;
+    height: 800px;
+}
+.member{
+    display: flex;
+    justify-content: end;
+    text-decoration: underline;
+    margin-right: 140px;
+    font-size: 20px;
+    color: rgb(99, 95, 95);
+    cursor: pointer;
+}
+.member:hover{
+    color: #0f97e6;
+}
+.error{
+    color: red;
+}
+
+.success-modal {
+    background-color: #dff0d8; /* Success background color */
+    color: #3c763d; /* Success font color */
+  }
+  
+  /* Center the modal at the bottom of the screen */
+  .success-modal .modal-dialog {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    margin: 0;
+  }
+  .position{
+    /* position: relative; */
+    top: 80%;
+  }
+  .failure-modal {
+    background-color: #f0d8d8; /* Success background color */
+    color: #763c3c; /* Success font color */
+  }

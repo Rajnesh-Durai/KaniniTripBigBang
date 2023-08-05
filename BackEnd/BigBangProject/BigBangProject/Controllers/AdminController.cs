@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace BigBangProject.Controllers
 {
-    [Route("Admin Side")]
+    [Route("AdminSide")]
     [ApiController]
     public class AdminController:ControllerBase
     {

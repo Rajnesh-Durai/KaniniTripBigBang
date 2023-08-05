@@ -1,0 +1,99 @@
+/* MapComponent.css */
+.map {
+  .rsm-geography {
+    fill: #d2f5ff;
+    stroke: #349fba;
+  }
+
+  .rsm-marker {
+    fill: none;
+    stroke: #053a47;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.sectmap {
+  background-image: url(../../../Assets/we-went-little-day-tour-around-mullfjallet.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #fff;
+}
+
+.marker {
+  fill: #86e0e0;
+}
+
+.service {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: 'Manrope';
+  position: absolute;
+  bottom: 100px;
+  left: 300px;
+}
+
+.marker path {
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    fill: #fff;
+  }
+  to {
+    fill: red;
+  }
+}
+.map {
+  width: 1100px;
+height: 700px;
+  /* margin: auto auto; This will center the map container horizontally */
+  background-image: url(../../../Assets/laptop-png-6759.png);
+  background-size: 1000px 600px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: relative;
+  top: 5%;
+  left: 2%;
+}
+.ipad{
+  position: relative;
+  top: 63%;
+  right: 50%;
+}
+.travelhead{
+font-weight: 800;
+  font-size: 38px;
+  margin-top: 120px;
+}
+.travelbody{
+  font-weight: 700;
+  font-size: 34px;
+}
+.travelbody2{
+  font-weight: 500;
+  font-size: 28px;
+}
+.travelhead,
+.travelbody,
+.travelbody2 {
+  opacity: 0; /* Start with opacity 0 to hide the elements initially */
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the fade-in animation to the elements */
+.travelhead,
+.travelbody,
+.travelbody2 {
+  animation: fadeIn 1.5s ease-in-out forwards; /* Adjust the duration as per your preference */
+}

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.chatbot-icon
+{
+  border-radius: 50%;
+  border: none;
+  /* background-image: linear-gradient(to bottom,#afe0f4,#e1eec8); */
+  background-color: #fff;
+  position: fixed;
+  bottom: 40px; /* Adjust the distance from the bottom as needed */
+  right: 40px; /* Adjust the distance from the right as needed */
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  z-index: 999;
+  overflow-y: auto; /* Enable vertical scrolling if the content overflows */
+}
+img{
+  width: 35px;
+  height: 35px;
+}

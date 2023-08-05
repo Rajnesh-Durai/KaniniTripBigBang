@@ -26,6 +26,7 @@ namespace BigBangProject.Services.UserService
                          join pack in packages on locate.Id equals pack.LocationId into locationPackages
                          select new LocationDTO()
                          {
+                             ImageName = ConvertToBase64(locate.ImageName),
                              LocationId = locate.Id,
                              LocationName = locate.LocationName,
                              PackStarts = locationPackages.Min(p => p.PricePerPerson)
@@ -36,6 +37,14 @@ namespace BigBangProject.Services.UserService
                 throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
             }
             return items;
+        }
+        private string ConvertToBase64(string imageName)
+        {
+            var uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "Images");
+            var filePath = Path.Combine(uploadsFolder, imageName);
+
+            var imageBytes = System.IO.File.ReadAllBytes(filePath);
+            return Convert.ToBase64String(imageBytes);
         }
         public async Task<List<PackageDTO>?> GetAllPackage(int locationId)
         {
@@ -54,7 +63,8 @@ namespace BigBangProject.Services.UserService
                              SpotName = schedule.SpotName,   // Include SpotName in PackageDTO
                              VehicleName = schedule.VehicleName, // Include VehicleName in PackageDTO
                              PricePerPerson = pack.PricePerPerson,
-                             TotalDays=pack.NumberOfDays
+                             TotalDays=pack.NumberOfDays,
+                             ImageName= ConvertToBase64(pack.ImageName),
                          }
                ).ToList();
 
@@ -74,7 +84,8 @@ namespace BigBangProject.Services.UserService
                                         NoOfSpot = group.Select(item => item.SpotName).Distinct().Count(),
                                         NoOfVehicle = group.Select(item => item.VehicleName).Count(),
                                         PricePerPerson = group.First().PricePerPerson,
-                                        TotalDays=group.First().TotalDays
+                                        TotalDays=group.First().TotalDays,
+                                        ImageName = group.First().ImageName
                                     }).ToList();
 
             return groupedItems;
@@ -105,11 +116,11 @@ namespace BigBangProject.Services.UserService
                         Id = daySchedule.Id,
                         Day = dayNo,
                         SpotName = daySchedule.SpotName,
-                        SpotImage = spot?.ImageName,
+                        SpotImage = ConvertToBase64( spot?.ImageName),
                         SpotAddress = spot?.SpotAddress,
                         SpotDuration = spot?.DurationPerHour ?? 0,
                         HotelName = daySchedule.HotelName,
-                        HotelImage = hotel?.HotelImageName,
+                        HotelImage = ConvertToBase64(hotel?.HotelImageName),
                         Rating = hotel?.Ratings ?? 0,
                         VehicleName = daySchedule.VehicleName,
                         MealsImage = hotel?.MealsImageName,
