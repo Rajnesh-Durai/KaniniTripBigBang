@@ -17,5 +17,6 @@ namespace BigBangProject.Services.UserService
         Task<Location> PostLocation([FromForm] Location location);
         Task<Package> PostPackage([FromForm] Package package);
         Task<List<Dashboard>> GetAllDashboard();
+        Task<User> GetAdmin();
     }
 }

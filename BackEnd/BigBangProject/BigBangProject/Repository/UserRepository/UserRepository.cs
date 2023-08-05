@@ -217,6 +217,16 @@ namespace BigBangProject.Repository.UserRepository
             return item;
         
         }
+        public async Task<List<User>> GetAllUsers()
+        {
+            var item = await _dbContext.Users.ToListAsync();
+            if (item == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return item;
+        }
+
 
         [NonAction]
         public async Task<string> SaveImage(IFormFile imageFile)

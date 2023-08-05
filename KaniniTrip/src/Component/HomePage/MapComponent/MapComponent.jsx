@@ -17,9 +17,6 @@ background-color:#fff;
 
 const MapContainer = styled.div`
 
-position:relative;
-top:7.5%;
-right:-12.5%;
 `;
 
 const Section2 = styled.div`
@@ -64,14 +61,15 @@ const MapComponent = () => {
         <h3 className='travelbody'>We have Agents across India to accompany with your safe travels.</h3><br></br><br></br>
         <h3 className='travelbody2'>Cherish and Enjoy your travel with us</h3>
         <div className="map" id="map-section" >
-          <MapContainer>
+          <MapContainer className='mapCon'>
             <ComposableMap
               projection="geoMercator"
               projectionConfig={{
                 scale: 800,
                 center: [82, 22], // Adjust center coordinates to focus on India
               }}
-              style={{ height: '452px', width: '725px' }}
+              className='compMap'
+              // style={{ height: '452px', width: '725px' }}
             >
 
               <Geographies geography="india.json">

@@ -17,6 +17,7 @@ import PackageDescription from './Component/PackageDescription/PackageDescriptio
 import DaySchedule from './Component/DaySchedule/DaySchedule';
 import BookNow from './Component/BookNow/BookNow';
 import AgentBooking from './Component/AgentBooking/AgentBooking';
+import ContactUs from './Component/ContactUs/ContactUs';
 
 
 
@@ -41,7 +42,8 @@ function App() {
       {/* <DaySchedule/> */}
       {/* <BookNow/> */}
       {/* <PackageDescription/> */}
-      <AgentBooking/>
+      {/* <AgentBooking/> */}
+      <ContactUs/>
       <Footer />
       {/* <ToastContainer/> */}
       {/* ChatBot */}

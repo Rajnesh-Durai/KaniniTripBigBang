@@ -25,5 +25,6 @@ namespace BigBangProject.Repository.UserRepository
         Task<SightSeeing> GetSightSeeingBySpotName(string spot);
         Task<Hotel> GetHotelsBySightSeeingId(int sightSeeingId);
         Task<List<Dashboard>> GetAllDashboard();
+        Task<List<User>> GetAllUsers();
     }
 }

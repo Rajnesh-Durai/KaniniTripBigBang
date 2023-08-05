@@ -56,8 +56,11 @@ const RequestReceived = () => {
             No requests available.
           </div>
         ) : (
-          // If requests are available, display the table
-                <MDBTable align='middle'>
+            <div className='mt-5'>
+                <br/><br/><br/>
+                <h2 className='mb-4'>Request Table</h2>
+           {/* If requests are available, display the table */}
+                <MDBTable align='middle' >
                     <MDBTableHead className='back-color'>
                         <tr>
                             <th scope='col'>Name</th>
@@ -87,7 +90,9 @@ const RequestReceived = () => {
                             </tr>
                         ))}
                     </MDBTableBody>
-                </MDBTable>)}
+                </MDBTable>
+                </div>
+)}
             </div>
            
         </div>

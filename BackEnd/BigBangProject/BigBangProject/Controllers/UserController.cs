@@ -173,5 +173,20 @@ namespace BigBangProject.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GetAdmin")]
+        public async Task<ActionResult<User>> GetAdmin()
+        {
+            try
+            {
+                var createdHotel = await _context.GetAdmin();
+                return Ok(createdHotel);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
     }
 }

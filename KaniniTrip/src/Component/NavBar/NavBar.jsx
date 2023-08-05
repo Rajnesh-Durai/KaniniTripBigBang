@@ -66,7 +66,7 @@ const NavBar = () => {
             </li>
         </ul>
       </nav>
-      <label className="toggles">
+      <label for='nav-check' className="toggles">
         <div></div>
         <div></div>
         <div></div>

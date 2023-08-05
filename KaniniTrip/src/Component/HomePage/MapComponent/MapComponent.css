@@ -13,6 +13,11 @@
   }
 }
 
+.compMap {
+  height: 452px;
+  width: 725px;
+}
+
 .sectmap {
   background-image: url(../../../Assets/we-went-little-day-tour-around-mullfjallet.jpg);
   background-repeat: no-repeat;
@@ -41,13 +46,15 @@
   from {
     fill: #fff;
   }
+
   to {
     fill: red;
   }
 }
+
 .map {
   width: 1100px;
-height: 700px;
+  height: 700px;
   /* margin: auto auto; This will center the map container horizontally */
   background-image: url(../../../Assets/laptop-png-6759.png);
   background-size: 1000px 600px;
@@ -57,28 +64,37 @@ height: 700px;
   top: 5%;
   left: 2%;
 }
-.ipad{
+
+.ipad {
   position: relative;
   top: 63%;
   right: 50%;
 }
-.travelhead{
-font-weight: 800;
+
+.travelhead {
+  font-weight: 800;
   font-size: 38px;
   margin-top: 120px;
+  text-align: center;
 }
-.travelbody{
+
+.travelbody {
   font-weight: 700;
   font-size: 34px;
+  text-align: center;
 }
-.travelbody2{
+
+.travelbody2 {
   font-weight: 500;
   font-size: 28px;
+  text-align: center;
 }
+
 .travelhead,
 .travelbody,
 .travelbody2 {
-  opacity: 0; /* Start with opacity 0 to hide the elements initially */
+  opacity: 0;
+  /* Start with opacity 0 to hide the elements initially */
 }
 
 /* Define the fade-in animation */
@@ -86,6 +102,7 @@ font-weight: 800;
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -95,5 +112,138 @@ font-weight: 800;
 .travelhead,
 .travelbody,
 .travelbody2 {
-  animation: fadeIn 1.5s ease-in-out forwards; /* Adjust the duration as per your preference */
+  animation: fadeIn 1.5s ease-in-out forwards;
+  /* Adjust the duration as per your preference */
+}
+
+.mapCon {
+  position: relative;
+  top: 7.5%;
+  right: -12.5%;
+}
+
+@media screen and (max-width:900px) {
+  .map {
+    width: 1100px;
+    height: 700px;
+    /* margin: auto auto; This will center the map container horizontally */
+    background-image: url(../../../Assets/laptop-png-6759.png);
+    background-size: 600px 400px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    top: 5%;
+    left: 28%;
+  }
+
+  .compMap {
+    height: 302px;
+    width: 430px;
+  }
+
+  .mapCon {
+    position: relative;
+    top: 5.5%;
+    right: -7.8%;
+  }
+}
+@media screen and (max-width:740px) {
+  .map {
+    width: 1100px;
+    height: 700px;
+    /* margin: auto auto; This will center the map container horizontally */
+    background-image: url(../../../Assets/laptop-png-6759.png);
+    background-size: 600px 400px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    top: 5%;
+    left: 35%;
+  }
+
+  .compMap {
+    height: 302px;
+    width: 430px;
+  }
+
+  .mapCon {
+    position: relative;
+    top: 5.5%;
+    right: -7.8%;
+  }
+}
+@media screen and (max-width:640px) {
+  .map {
+    width: 1100px;
+    height: 700px;
+    /* margin: auto auto; This will center the map container horizontally */
+    background-image: url(../../../Assets/laptop-png-6759.png);
+    background-size: 400px 280px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    top: 5%;
+    left: 55%;
+  }
+
+  .compMap {
+    height: 212px;
+    width: 290px;
+  }
+
+  .mapCon {
+    position: relative;
+    top: 4%;
+    right: -5%;
+  }
+}
+@media screen and (max-width:420px) {
+  .map {
+    width: 1100px;
+    height: 700px;
+    /* margin: auto auto; This will center the map container horizontally */
+    background-image: url(../../../Assets/laptop-png-6759.png);
+    background-size: 400px 280px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    top: 5%;
+    left: 85%;
+  }
+
+  .compMap {
+    height: 212px;
+    width: 290px;
+  }
+
+  .mapCon {
+    position: relative;
+    top: 4%;
+    right: -5%;
+  }
+}
+@media screen and (max-width:396px) {
+  .map {
+    width: 1100px;
+    height: 700px;
+    /* margin: auto auto; This will center the map container horizontally */
+    background-image: url(../../../Assets/laptop-png-6759.png);
+    background-size: 400px 280px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    top: 5%;
+    left: 95%;
+  }
+
+  .compMap {
+    height: 212px;
+    width: 290px;
+  }
+
+  .mapCon {
+    position: relative;
+    top: 4%;
+    right: -5%;
+  }
 }

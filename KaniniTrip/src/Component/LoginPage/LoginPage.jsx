@@ -113,9 +113,9 @@ const LoginPage = () => {
                 <div className='spliting'>
                     <div className='split2'>
                         <div>
-                            <img src={LoginImage} className='image'></img>
+                            <img src={LoginImage} className='image1'></img>
                         </div>
-                        <div className='member'>
+                        <div className='member1'>
                             Already not a member? Register Here
                         </div>
                     </div>
@@ -131,7 +131,7 @@ const LoginPage = () => {
                                 <div>
                                     <input
                                         type="text"
-                                        className="input"
+                                        className="input1"
                                         placeholder='Your User Name'
                                         onChange={(event) => setUserDTO({ ...userDTO, username: event.target.value })} />
                                 </div>
@@ -146,7 +146,7 @@ const LoginPage = () => {
                                 <div>
                                     <input
                                         type="password"
-                                        className="input"
+                                        className="input1"
                                         placeholder='Your Password'
                                         onChange={(event) => setUserDTO({ ...userDTO, password: event.target.value })}
                                     />

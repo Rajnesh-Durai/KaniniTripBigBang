@@ -9,5 +9,7 @@ namespace BigBangProject.Services.AgentService
         Task<List<Hotel>> GetHotelbySpotId(int spotId);
         Task<List<Package>> PostPackage(Package package);
         Task<List<DaySchedule>> PostDaySchedule(DaySchedule schedule);
+        Task<Package> GetAllPackage();
+
     }
 }

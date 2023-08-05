@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AIB73LdgzOpmnZwdXPe3BQq1HBlDlPuqe4Osc8+fX8c=",
+  "Hash": "DMzFw0LEa62ClREyNhyiYAldnFIBrAERcGLgUJtN7/I=",
   "Source": "BigBangProject",
   "BasePath": "_content/BigBangProject",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\fateh231052107.jpg"
+    },
+    {
+      "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\flower235906714.jpg",
+      "SourceId": "BigBangProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\",
+      "BasePath": "_content/BigBangProject",
+      "RelativePath": "Images/flower235906714.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\flower235906714.jpg"
     },
     {
       "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\goa235550912.jpg",
@@ -1003,6 +1020,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\keralap3233632079.jpg"
     },
     {
+      "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\keralap3235135839.jpg",
+      "SourceId": "BigBangProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\",
+      "BasePath": "_content/BigBangProject",
+      "RelativePath": "Images/keralap3235135839.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\keralap3235135839.jpg"
+    },
+    {
       "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\kumily233011289.jpg",
       "SourceId": "BigBangProject",
       "SourceType": "Discovered",
@@ -1035,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\maldives-i231508246.jpg"
+    },
+    {
+      "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\munnar230736638.jpg",
+      "SourceId": "BigBangProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\",
+      "BasePath": "_content/BigBangProject",
+      "RelativePath": "Images/munnar230736638.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\munnar230736638.jpg"
     },
     {
       "Identity": "D:\\KaniniTripBigBang\\BackEnd\\BigBangProject\\BigBangProject\\wwwroot\\Images\\munnar232939750.jpg",

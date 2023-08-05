@@ -239,5 +239,16 @@ namespace BigBangProject.Services.UserService
             }
             return imageList;
         }
+        public async Task<User> GetAdmin()
+        {
+            var item= await _userRepository.GetAllUsers();
+            // Get the first User with role "admin" or null if there is no such user
+            var adminUser = item.FirstOrDefault(user => user.Role == "Admin");
+            if (adminUser == null)
+            {
+                throw new Exception(CustomException.ExceptionMessages["CantEmpty"]);
+            }
+            return adminUser;
+        }
     }
 }

@@ -104,7 +104,7 @@ const AgencyRegister = () => {
             <div className='head'>Sign Up</div>
             <div>
               {/* 1st Row */}
-              <div className='flex justify-content-between'>
+              <div className=' row1'>
                 <div className='width'>
                   <div className='flex'>
                     <div>
@@ -113,7 +113,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='text'
-                        className='input'
+                        className='input2'
                         onChange={(event) => setUserDTO({ ...userDTO, name: event.target.value })}
                         placeholder='Your Name'
                       />
@@ -131,7 +131,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='text'
-                        className='input'
+                        className='input2'
                         onChange={(event) => setUserDTO({ ...userDTO, username: event.target.value })}
                         placeholder='Your User Name'
                       />
@@ -142,7 +142,7 @@ const AgencyRegister = () => {
                 </div>
               </div>
 
-              <div className='flex justify-content-between'>
+              <div className='row1'>
                 <div className='width'>
                   <div className='flex'>
                     <div>
@@ -151,7 +151,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='email'
-                        className='input'
+                        className='input2'
                         placeholder='Your Agency Name'
                         onChange={(event) => setUserDTO({ ...userDTO, agencyName: event.target.value })}
                       />
@@ -168,7 +168,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='email'
-                        className='input'
+                        className='input2'
                         placeholder='Your Email'
                         onChange={(event) => setUserDTO({ ...userDTO, email: event.target.value })}
                       />
@@ -179,7 +179,7 @@ const AgencyRegister = () => {
                 </div>
               </div>
 
-              <div className='flex justify-content-between'>
+              <div className='row1'>
                 <div className='width'>
                   <div className='flex'>
                     <div>
@@ -188,7 +188,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='tel'
-                        className='input'
+                        className='input2'
                         placeholder='Your Phone Number'
                         onChange={(event) => setUserDTO({ ...userDTO, phoneNumber: event.target.value })}
                       />
@@ -205,7 +205,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='tel'
-                        className='input'
+                        className='input2'
                         placeholder='Your Age'
                         onChange={(event) => setUserDTO({ ...userDTO, age: event.target.value })}
                       />
@@ -216,7 +216,7 @@ const AgencyRegister = () => {
                 </div>
               </div>
 
-              <div className='flex justify-content-between'>
+              <div className='row1'>
                 <div className='width'>
                   <div className='flex'>
                     <div>
@@ -225,7 +225,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='tel'
-                        className='input'
+                        className='input2'
                         placeholder='Your Experience'
                         onChange={(event) => setUserDTO({ ...userDTO, yearsOfExperience: event.target.value })}
                       />
@@ -243,7 +243,7 @@ const AgencyRegister = () => {
                     <div>
                       <input
                         type='password'
-                        className='input'
+                        className='input2'
                         placeholder='Your Password'
                         onChange={(event) => setUserDTO({ ...userDTO, userPassword: event.target.value })}
                       />
@@ -255,9 +255,9 @@ const AgencyRegister = () => {
                 </div>
               </div>
 
-              <div className='flex justify-content-between mt-5'>
+              <div className='row1 mt-5'>
                 <div >
-                  <div className='member'>Already a member? Sign In Here</div>
+                  <div className='member2'>Already a member? Sign In Here</div>
                 </div>
                 <div >
                   <div>

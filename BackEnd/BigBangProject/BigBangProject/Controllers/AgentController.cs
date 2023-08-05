@@ -79,5 +79,18 @@ namespace BigBangProject.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpGet("GettingLastPostedPackage")]
+        public async Task<ActionResult<Package>> GetAllPackage()
+        {
+            try
+            {
+                var obj = await _agentService.GetAllPackage();
+                return Ok(obj);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

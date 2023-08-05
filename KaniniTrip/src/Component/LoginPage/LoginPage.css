@@ -7,7 +7,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-.input{
+.input1{
     border: none;
     font-size: 20px;
     line-height: 3rem;
@@ -16,7 +16,7 @@
     margin-left: 15px;
     width: 150%;
 }
-.input:focus{
+.input1:focus{
     outline: none;
 }
 .spliting{
@@ -57,12 +57,13 @@ hr{
     align-items: center;
     margin-top: 0px;
 }
-.image{
+.image1{
     margin-left: 25px;
     width: 900px;
     height: 650px;
+    margin-top: 100px;
 }
-.member{
+.member1{
     display: flex;
     justify-content: start;
     text-decoration: underline;
@@ -71,7 +72,7 @@ hr{
     color: rgb(99, 95, 95);
     cursor: pointer;
 }
-.member:hover{
+.member1:hover{
     color: #0f97e6;
 }
 
@@ -89,4 +90,87 @@ left: 50%;
 {
     background: transparent;
     box-shadow: none;
+}
+
+
+@media screen and (max-width:1600px) {
+    .image1{
+        margin-left: 15px;
+    
+        height: 650px;
+    }
+
+}
+@media screen and (max-width:1500px) {
+    .image1{
+        margin-left: 15px;
+        width: 700px;
+        height: 650px;
+    }
+
+}
+@media screen and (max-width:1380px) {
+    .image1{
+        margin-left: 15px;
+        width: 600px;
+        height: 650px;
+    }
+    .input1{
+        border: none;
+        font-size: 20px;
+        line-height: 3rem;
+        margin-bottom: 20px;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 70%;
+    }
+}
+@media screen and (max-width:1080px) {
+    .input1{
+        border: none;
+        font-size: 20px;
+        line-height: 3rem;
+        margin-bottom: 20px;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 40%;
+    }
+
+}
+@media screen and (max-width:820px) {
+    .image1{
+        margin-left: 15px;
+        width: 400px;
+        height: 380px;
+        margin-top: 150px;
+    }
+    .input1{
+        border: none;
+        font-size: 20px;
+        line-height: 3rem;
+        margin-bottom: 20px;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 70%;
+    }
+}
+@media screen and (max-width:590px) {
+    .image1{
+        margin-left: 15px;
+        width: 300px;
+        height: 450px;
+        margin-top: 200px;
+    }
+    .input1{
+        border: none;
+        font-size: 20px;
+        line-height: 3rem;
+        margin-bottom: 20px;
+        margin-top: 15px;
+        margin-left: 15px;
+        width: 70%;
+    }
+    .member1{
+        font-size: 16px;
+    }
 }

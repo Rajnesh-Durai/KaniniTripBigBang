@@ -240,16 +240,20 @@ const handleHotelChange = (event, dayIndex) => {
             .then((response) => {
                 // Handle successful response from the server
                 console.log('Data successfully sent to the server:', response.data);
+                setIsOpen(true)
             })
             .catch((error) => {
                 // Handle error
                 console.error('Error while sending data to the server:', error);
             });
-        setIsOpen(true)
     }
 
     const handlePost = async () => {
         try {
+
+            const packId=await axios.get('https://localhost:7026/AgentSide/GettingLastPostedPackage');
+            const packIdResponse=packId.data.id
+
             const response = await axios.get('https://localhost:7026/UserSide/DisplayingAllLocations');
             const lengthItem = response.data.length;
     
@@ -263,7 +267,7 @@ const handleHotelChange = (event, dayIndex) => {
                 // console.log(mail);
                 // const id = mail[i];
                 const dayschedule = {
-                    packageId: 17,
+                    packageId: packIdResponse,
                      daywise: i+1, 
                      hotelName: hotelArray[i], 
                      spotName: spotArray[i], 
@@ -275,7 +279,7 @@ const handleHotelChange = (event, dayIndex) => {
             console.log('hotelarray',hotelArray);
             console.log('vehicleArray',vehicleArray);
             // Send the POST request with the updated daySchedule
-             const postResponse = await axios.post('https://localhost:7026/AgentSide/GetHotelNameBySpotId', dayschedule);
+            const postResponse = await axios.post('https://localhost:7026/AgentSide/GetHotelNameBySpotId', dayschedule);
             console.log('Data successfully sent to the server:', postResponse.data);
             }
         } catch (error) {

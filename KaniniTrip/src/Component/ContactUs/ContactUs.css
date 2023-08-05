@@ -1,0 +1,79 @@
+.margin-auto
+{
+    margin: 0 auto;
+}
+.widthof-card
+{
+    margin: 0 auto;
+    width: 300px;
+    transition: 0.5s;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.widthof-feed
+{
+    margin: 0 auto;
+    width: 600px;
+    transition: 0.5s;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.widthof-card:hover
+{
+    translate: 0px -12px;
+}
+.cardof-image
+{
+    width: 180px;
+    height: 180px;
+    margin: 10px auto;
+}
+.textalign-cnter{
+    text-align: center;
+    font-weight: 800px;
+    color: black;
+    font-size: 36px;
+}
+.textFeed{
+    font-size: 32px;
+    color: black;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media screen and (max-width:1280px) {
+    .book-head{
+        left: 30%;
+    }
+}
+@media screen and (max-width:1020px) {
+    .book-head{
+        left: 30%;
+        font-size: 56px;
+    }
+}
+@media screen and (max-width:820px) {
+    .book-head{
+        left: 30%;
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:630px) {
+    .book-head{
+        left: 24%;
+        font-size: 50px;
+    }
+}
+@media screen and (max-width:520px) {
+    .book-head{
+        left: 20%;
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .book-head{
+        left: 18%;
+        font-size: 40px;
+    }
+}

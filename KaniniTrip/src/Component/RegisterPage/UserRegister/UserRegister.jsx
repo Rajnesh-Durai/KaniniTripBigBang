@@ -99,7 +99,7 @@ const UserRegister = () => {
         <>
             <div className='containers'>
                 <div className='splituser'>
-                    <div className='split1'>
+                    <div className='split11'>
                         <div className='head'>Sign Up</div>
                         <div>
                             {/* Name */}
@@ -110,7 +110,7 @@ const UserRegister = () => {
                                 <div>
                                     <input
                                         type='text'
-                                        className='input'
+                                        className='input1'
                                         onChange={(event) => setUserDTO({ ...userDTO, name: event.target.value })}
                                         placeholder='Your Name'
                                     />
@@ -127,7 +127,7 @@ const UserRegister = () => {
                                 <div>
                                     <input
                                         type='text'
-                                        className='input'
+                                        className='input1'
                                         placeholder='Your User Name'
                                         onChange={(event) => setUserDTO({ ...userDTO, username: event.target.value })}
                                     />
@@ -144,7 +144,7 @@ const UserRegister = () => {
                                 <div>
                                     <input
                                         type='email'
-                                        className='input'
+                                        className='input1'
                                         placeholder='Your Email'
                                         onChange={(event) => setUserDTO({ ...userDTO, email: event.target.value })}
                                     />
@@ -161,7 +161,7 @@ const UserRegister = () => {
                                 <div>
                                     <input
                                         type='number'
-                                        className='input'
+                                        className='input1'
                                         placeholder='Your Phone Number'
                                         onChange={(event) => setUserDTO({ ...userDTO, phoneNumber: event.target.value })}
                                     />
@@ -178,7 +178,7 @@ const UserRegister = () => {
                                 <div>
                                     <input
                                         type='password'
-                                        className='input'
+                                        className='input1'
                                         placeholder='Your Password'
                                         onChange={(event) => setUserDTO({ ...userDTO, userPassword: event.target.value })}
                                     />
@@ -197,11 +197,11 @@ const UserRegister = () => {
 
                         </div>
                     </div>
-                    <div className='split2'>
+                    <div className='split12'>
                         <div>
-                            <img src={LoginImage} className='image' alt='Login' />
+                            <img src={LoginImage} className='image3' alt='Login' />
                         </div>
-                        <div className='member'>Already a member? Sign In Here</div>
+                        <div className='member11'>Already a member? Sign In Here</div>
                     </div>
                 </div>
 

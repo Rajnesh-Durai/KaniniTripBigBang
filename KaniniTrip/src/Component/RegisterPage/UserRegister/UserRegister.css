@@ -7,7 +7,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-.input{
+.input1{
     border: none;
     font-size: 20px;
     line-height: 3rem;
@@ -15,20 +15,21 @@
     margin-top: 8px;
     margin-left: 15px;
     width: 200%;
+    background: transparent;
 }
-.input:focus{
+.input1:focus{
     outline: none;
 }
-.input:active{
+.input1:active{
     background-color: #fff;
 }
 .splituser{
     display: flex;
 }
-.split1{
+.split11{
     width: 50%;
 }
-.split2{
+.split12{
     margin-top: 80px;
 }
 .head{
@@ -60,12 +61,12 @@ hr{
     display: flex;
     align-items: center;
 }
-.image{
+.image3{
     margin-left: 25px;
     width: 950px;
     height: 800px;
 }
-.member{
+.member11{
     display: flex;
     justify-content: end;
     text-decoration: underline;
@@ -74,7 +75,7 @@ hr{
     color: rgb(99, 95, 95);
     cursor: pointer;
 }
-.member:hover{
+.member11:hover{
     color: #0f97e6;
 }
 .error{
@@ -102,3 +103,26 @@ hr{
     background-color: #f0d8d8; /* Success background color */
     color: #763c3c; /* Success font color */
   }
+
+ @media screen and (max-width:800px) {
+    .image3{
+        display: none;
+    }
+    .split11{
+        width: 550%;
+    }
+    .split12
+    {
+        width: 20%;
+    }
+    .member11{
+        margin-top: 770px;
+        width: 150px;
+        font-size: 20px;
+        margin-right: 1000px;
+    }
+    .input1
+    {
+        width: 100%;
+    }
+ }
