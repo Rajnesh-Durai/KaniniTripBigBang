@@ -1,0 +1,195 @@
+2023-08-07 19:50:38.041 +05:30 [INF] User profile is available. Using 'C:\Users\Rajesh Rajinish\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-07 19:50:38.410 +05:30 [INF] Now listening on: https://localhost:7026
+2023-08-07 19:50:38.411 +05:30 [INF] Now listening on: http://localhost:5230
+2023-08-07 19:50:38.414 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-07 19:50:38.415 +05:30 [INF] Hosting environment: Development
+2023-08-07 19:50:38.415 +05:30 [INF] Content root path: D:\KaniniTripBigBang\BackEnd\BigBangProject\BigBangProject
+2023-08-07 19:50:39.192 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/index.html - -
+2023-08-07 19:50:39.845 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/index.html - - - 200 - text/html;charset=utf-8 655.9558ms
+2023-08-07 19:50:39.855 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - -
+2023-08-07 19:50:39.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 6.7055ms
+2023-08-07 19:50:39.870 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/_vs/browserLink - -
+2023-08-07 19:50:39.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.9472ms
+2023-08-07 19:50:39.996 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - -
+2023-08-07 19:50:40.162 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 166.4997ms
+2023-08-07 19:50:58.422 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/api/Auth/LogIN - -
+2023-08-07 19:50:58.441 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:50:58.447 +05:30 [INF] HTTP OPTIONS /api/Auth/LogIN responded 204 in 11.8892 ms
+2023-08-07 19:50:58.457 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/api/Auth/LogIN - - - 204 - - 35.8172ms
+2023-08-07 19:50:58.461 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/LogIN application/json 47
+2023-08-07 19:50:58.468 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:50:58.479 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AuthController.LogIN (BigBangProject)'
+2023-08-07 19:50:58.542 +05:30 [INF] Route matched with {action = "LogIN", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BigBangProject.Model.DTO.UserDTO]] LogIN(BigBangProject.Model.DTO.UserDTO) on controller BigBangProject.Controllers.AuthController (BigBangProject).
+2023-08-07 19:51:02.357 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Age], [u].[AgencyName], [u].[Email], [u].[Hashkey], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username], [u].[YearsOfExperience]
+FROM [Users] AS [u]
+2023-08-07 19:51:02.634 +05:30 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-08-07 19:51:02.654 +05:30 [INF] Executed action BigBangProject.Controllers.AuthController.LogIN (BigBangProject) in 4100.7744ms
+2023-08-07 19:51:02.659 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AuthController.LogIN (BigBangProject)'
+2023-08-07 19:51:02.662 +05:30 [INF] HTTP POST /api/Auth/LogIN responded 400 in 4196.3479 ms
+2023-08-07 19:51:02.681 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/LogIN application/json 47 - 400 - application/problem+json;+charset=utf-8 4220.1414ms
+2023-08-07 19:51:12.355 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/api/Auth/LogIN - -
+2023-08-07 19:51:12.360 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:12.362 +05:30 [INF] HTTP OPTIONS /api/Auth/LogIN responded 204 in 5.1137 ms
+2023-08-07 19:51:12.365 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/api/Auth/LogIN - - - 204 - - 10.8180ms
+2023-08-07 19:51:12.368 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7026/api/Auth/LogIN application/json 47
+2023-08-07 19:51:12.370 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:12.373 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AuthController.LogIN (BigBangProject)'
+2023-08-07 19:51:12.375 +05:30 [INF] Route matched with {action = "LogIN", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BigBangProject.Model.DTO.UserDTO]] LogIN(BigBangProject.Model.DTO.UserDTO) on controller BigBangProject.Controllers.AuthController (BigBangProject).
+2023-08-07 19:51:12.426 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[Age], [u].[AgencyName], [u].[Email], [u].[Hashkey], [u].[IsActive], [u].[Name], [u].[Password], [u].[PhoneNumber], [u].[Role], [u].[Username], [u].[YearsOfExperience]
+FROM [Users] AS [u]
+2023-08-07 19:51:12.720 +05:30 [INF] Executing OkObjectResult, writing value of type 'BigBangProject.Model.DTO.UserDTO'.
+2023-08-07 19:51:12.727 +05:30 [INF] Executed action BigBangProject.Controllers.AuthController.LogIN (BigBangProject) in 348.727ms
+2023-08-07 19:51:12.731 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AuthController.LogIN (BigBangProject)'
+2023-08-07 19:51:12.735 +05:30 [INF] HTTP POST /api/Auth/LogIN responded 200 in 364.2762 ms
+2023-08-07 19:51:12.742 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7026/api/Auth/LogIN application/json 47 - 200 - application/json;+charset=utf-8 374.6027ms
+2023-08-07 19:51:16.198 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - -
+2023-08-07 19:51:16.201 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:16.204 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:51:16.215 +05:30 [INF] Route matched with {action = "GetLocation", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.DTO.LocationDTO]]] GetLocation() on controller BigBangProject.Controllers.UserController (BigBangProject).
+2023-08-07 19:51:16.383 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ImageName], [l].[LocationName]
+FROM [Locations] AS [l]
+2023-08-07 19:51:16.427 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ImageName], [p].[Iternary], [p].[LocationId], [p].[NumberOfDays], [p].[PackageName], [p].[PersonLimit], [p].[PricePerPerson], [p].[UserId]
+FROM [Packages] AS [p]
+2023-08-07 19:51:16.537 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.DTO.LocationDTO, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:51:16.610 +05:30 [INF] Executed action BigBangProject.Controllers.UserController.GetLocation (BigBangProject) in 392.0183ms
+2023-08-07 19:51:16.611 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:51:16.613 +05:30 [INF] HTTP GET /UserSide/DisplayingAllLocations responded 200 in 411.5604 ms
+2023-08-07 19:51:16.615 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - - - 200 - application/json;+charset=utf-8 416.6327ms
+2023-08-07 19:51:19.589 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - -
+2023-08-07 19:51:19.591 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:19.593 +05:30 [INF] HTTP OPTIONS /AgentSide/GetSpotNameById responded 204 in 1.4433 ms
+2023-08-07 19:51:19.595 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - - - 204 - - 5.8183ms
+2023-08-07 19:51:19.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - -
+2023-08-07 19:51:19.723 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:19.734 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject)'
+2023-08-07 19:51:19.750 +05:30 [INF] Route matched with {action = "GetSpotbyLocationId", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.SightSeeing]]] GetSpotbyLocationId(Int32) on controller BigBangProject.Controllers.AgentController (BigBangProject).
+2023-08-07 19:51:19.993 +05:30 [INF] Executed DbCommand (49ms) [Parameters=[@__locationId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[DurationPerHour], [s].[ImageName], [s].[LocationId], [s].[SpotAddress], [s].[SpotName]
+FROM [SightSeeings] AS [s]
+WHERE [s].[LocationId] = @__locationId_0
+2023-08-07 19:51:20.024 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.SightSeeing, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:51:20.034 +05:30 [INF] Executed action BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject) in 280.7441ms
+2023-08-07 19:51:20.036 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject)'
+2023-08-07 19:51:20.038 +05:30 [INF] HTTP GET /AgentSide/GetSpotNameById responded 200 in 315.2048 ms
+2023-08-07 19:51:20.042 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - - - 200 - application/json;+charset=utf-8 443.1877ms
+2023-08-07 19:51:24.406 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - -
+2023-08-07 19:51:24.411 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:24.413 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:51:24.414 +05:30 [INF] Route matched with {action = "GetLocation", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.DTO.LocationDTO]]] GetLocation() on controller BigBangProject.Controllers.UserController (BigBangProject).
+2023-08-07 19:51:24.431 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ImageName], [l].[LocationName]
+FROM [Locations] AS [l]
+2023-08-07 19:51:24.436 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ImageName], [p].[Iternary], [p].[LocationId], [p].[NumberOfDays], [p].[PackageName], [p].[PersonLimit], [p].[PricePerPerson], [p].[UserId]
+FROM [Packages] AS [p]
+2023-08-07 19:51:24.455 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.DTO.LocationDTO, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:51:24.485 +05:30 [INF] Executed action BigBangProject.Controllers.UserController.GetLocation (BigBangProject) in 68.8753ms
+2023-08-07 19:51:24.486 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:51:24.487 +05:30 [INF] HTTP GET /UserSide/DisplayingAllLocations responded 200 in 75.9477 ms
+2023-08-07 19:51:24.490 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - - - 200 - application/json;+charset=utf-8 83.5599ms
+2023-08-07 19:51:27.238 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - -
+2023-08-07 19:51:27.240 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:27.242 +05:30 [INF] HTTP OPTIONS /AgentSide/GetSpotNameById responded 204 in 1.8348 ms
+2023-08-07 19:51:27.248 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - - - 204 - - 9.7822ms
+2023-08-07 19:51:27.252 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - -
+2023-08-07 19:51:27.255 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:51:27.261 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject)'
+2023-08-07 19:51:27.263 +05:30 [INF] Route matched with {action = "GetSpotbyLocationId", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.SightSeeing]]] GetSpotbyLocationId(Int32) on controller BigBangProject.Controllers.AgentController (BigBangProject).
+2023-08-07 19:51:27.290 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__locationId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[DurationPerHour], [s].[ImageName], [s].[LocationId], [s].[SpotAddress], [s].[SpotName]
+FROM [SightSeeings] AS [s]
+WHERE [s].[LocationId] = @__locationId_0
+2023-08-07 19:51:27.296 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.SightSeeing, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:51:27.299 +05:30 [INF] Executed action BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject) in 31.8898ms
+2023-08-07 19:51:27.302 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AgentController.GetSpotbyLocationId (BigBangProject)'
+2023-08-07 19:51:27.304 +05:30 [INF] HTTP GET /AgentSide/GetSpotNameById responded 200 in 49.2299 ms
+2023-08-07 19:51:27.306 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/AgentSide/GetSpotNameById?locationId=1 - - - 200 - application/json;+charset=utf-8 54.5148ms
+2023-08-07 19:52:18.247 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7026/UserSide/PostPackage multipart/form-data;+boundary=----WebKitFormBoundaryiGbLc9qhaD2V3HPo 34773
+2023-08-07 19:52:18.259 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:18.260 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.UserController.PostPackage (BigBangProject)'
+2023-08-07 19:52:18.311 +05:30 [INF] Route matched with {action = "PostPackage", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BigBangProject.Model.Package]] PostPackage(BigBangProject.Model.Package) on controller BigBangProject.Controllers.UserController (BigBangProject).
+2023-08-07 19:52:18.759 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 100), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Packages] ([ImageName], [Iternary], [LocationId], [NumberOfDays], [PackageName], [PersonLimit], [PricePerPerson], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2023-08-07 19:52:18.827 +05:30 [INF] Executing OkObjectResult, writing value of type 'BigBangProject.Model.Package'.
+2023-08-07 19:52:18.866 +05:30 [INF] Executed action BigBangProject.Controllers.UserController.PostPackage (BigBangProject) in 551.0626ms
+2023-08-07 19:52:18.868 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.UserController.PostPackage (BigBangProject)'
+2023-08-07 19:52:18.870 +05:30 [INF] HTTP POST /UserSide/PostPackage responded 200 in 611.3300 ms
+2023-08-07 19:52:18.874 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7026/UserSide/PostPackage multipart/form-data;+boundary=----WebKitFormBoundaryiGbLc9qhaD2V3HPo 34773 - 200 - application/json;+charset=utf-8 627.9787ms
+2023-08-07 19:52:22.452 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetHotelNameBySpotId?locationId=1 - -
+2023-08-07 19:52:22.456 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:22.457 +05:30 [INF] HTTP OPTIONS /AgentSide/GetHotelNameBySpotId responded 204 in 1.9037 ms
+2023-08-07 19:52:22.461 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetHotelNameBySpotId?locationId=1 - - - 204 - - 8.5908ms
+2023-08-07 19:52:22.466 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/AgentSide/GetHotelNameBySpotId?locationId=1 - -
+2023-08-07 19:52:22.468 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:22.472 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AgentController.GetHotelbySpotId (BigBangProject)'
+2023-08-07 19:52:22.482 +05:30 [INF] Route matched with {action = "GetHotelbySpotId", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.Hotel]]] GetHotelbySpotId(Int32) on controller BigBangProject.Controllers.AgentController (BigBangProject).
+2023-08-07 19:52:22.527 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__spotId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[BedType], [h].[FoodDescription], [h].[HotelFeatures], [h].[HotelImageName], [h].[HotelName], [h].[MealsImageName], [h].[Ratings], [h].[SightSeeingId]
+FROM [Hotels] AS [h]
+WHERE [h].[SightSeeingId] = @__spotId_0
+2023-08-07 19:52:22.558 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.Hotel, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:52:22.566 +05:30 [INF] Executed action BigBangProject.Controllers.AgentController.GetHotelbySpotId (BigBangProject) in 81.1731ms
+2023-08-07 19:52:22.568 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AgentController.GetHotelbySpotId (BigBangProject)'
+2023-08-07 19:52:22.570 +05:30 [INF] HTTP GET /AgentSide/GetHotelNameBySpotId responded 200 in 101.5555 ms
+2023-08-07 19:52:22.575 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/AgentSide/GetHotelNameBySpotId?locationId=1 - - - 200 - application/json;+charset=utf-8 109.1137ms
+2023-08-07 19:52:36.320 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/AgentSide/GettingLastPostedPackage - -
+2023-08-07 19:52:36.340 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:36.341 +05:30 [INF] HTTP OPTIONS /AgentSide/GettingLastPostedPackage responded 204 in 1.0299 ms
+2023-08-07 19:52:36.344 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/AgentSide/GettingLastPostedPackage - - - 204 - - 24.0803ms
+2023-08-07 19:52:36.348 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/AgentSide/GettingLastPostedPackage - -
+2023-08-07 19:52:36.351 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:36.354 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AgentController.GetAllPackage (BigBangProject)'
+2023-08-07 19:52:36.362 +05:30 [INF] Route matched with {action = "GetAllPackage", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BigBangProject.Model.Package]] GetAllPackage() on controller BigBangProject.Controllers.AgentController (BigBangProject).
+2023-08-07 19:52:36.388 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ImageName], [p].[Iternary], [p].[LocationId], [p].[NumberOfDays], [p].[PackageName], [p].[PersonLimit], [p].[PricePerPerson], [p].[UserId]
+FROM [Packages] AS [p]
+2023-08-07 19:52:36.393 +05:30 [INF] Executing OkObjectResult, writing value of type 'BigBangProject.Model.Package'.
+2023-08-07 19:52:36.395 +05:30 [INF] Executed action BigBangProject.Controllers.AgentController.GetAllPackage (BigBangProject) in 28.2597ms
+2023-08-07 19:52:36.397 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AgentController.GetAllPackage (BigBangProject)'
+2023-08-07 19:52:36.399 +05:30 [INF] HTTP GET /AgentSide/GettingLastPostedPackage responded 200 in 47.8506 ms
+2023-08-07 19:52:36.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/AgentSide/GettingLastPostedPackage - - - 200 - application/json;+charset=utf-8 53.6856ms
+2023-08-07 19:52:36.406 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - -
+2023-08-07 19:52:36.408 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:36.409 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:52:36.410 +05:30 [INF] Route matched with {action = "GetLocation", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.DTO.LocationDTO]]] GetLocation() on controller BigBangProject.Controllers.UserController (BigBangProject).
+2023-08-07 19:52:36.420 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ImageName], [l].[LocationName]
+FROM [Locations] AS [l]
+2023-08-07 19:52:36.425 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[ImageName], [p].[Iternary], [p].[LocationId], [p].[NumberOfDays], [p].[PackageName], [p].[PersonLimit], [p].[PricePerPerson], [p].[UserId]
+FROM [Packages] AS [p]
+2023-08-07 19:52:36.448 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.DTO.LocationDTO, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:52:36.490 +05:30 [INF] Executed action BigBangProject.Controllers.UserController.GetLocation (BigBangProject) in 77.2684ms
+2023-08-07 19:52:36.492 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.UserController.GetLocation (BigBangProject)'
+2023-08-07 19:52:36.493 +05:30 [INF] HTTP GET /UserSide/DisplayingAllLocations responded 200 in 85.6268 ms
+2023-08-07 19:52:36.495 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7026/UserSide/DisplayingAllLocations - - - 200 - application/json;+charset=utf-8 89.3615ms
+2023-08-07 19:52:36.526 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetHotelNameBySpotId - -
+2023-08-07 19:52:36.527 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:36.529 +05:30 [INF] HTTP OPTIONS /AgentSide/GetHotelNameBySpotId responded 204 in 1.2544 ms
+2023-08-07 19:52:36.533 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7026/AgentSide/GetHotelNameBySpotId - - - 204 - - 7.3843ms
+2023-08-07 19:52:36.536 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7026/AgentSide/GetHotelNameBySpotId application/json 95
+2023-08-07 19:52:36.538 +05:30 [INF] CORS policy execution successful.
+2023-08-07 19:52:36.539 +05:30 [INF] Executing endpoint 'BigBangProject.Controllers.AgentController.PostDaySchedule (BigBangProject)'
+2023-08-07 19:52:36.546 +05:30 [INF] Route matched with {action = "PostDaySchedule", controller = "Agent"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[BigBangProject.Model.DaySchedule]]] PostDaySchedule(BigBangProject.Model.DaySchedule) on controller BigBangProject.Controllers.AgentController (BigBangProject).
+2023-08-07 19:52:36.635 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DaySchedules] ([Daywise], [HotelName], [PackageId], [SpotName], [VehicleName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-08-07 19:52:36.657 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [d].[Id], [d].[Daywise], [d].[HotelName], [d].[PackageId], [d].[SpotName], [d].[VehicleName]
+FROM [DaySchedules] AS [d]
+2023-08-07 19:52:36.663 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BigBangProject.Model.DaySchedule, BigBangProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-08-07 19:52:36.670 +05:30 [INF] Executed action BigBangProject.Controllers.AgentController.PostDaySchedule (BigBangProject) in 120.9391ms
+2023-08-07 19:52:36.672 +05:30 [INF] Executed endpoint 'BigBangProject.Controllers.AgentController.PostDaySchedule (BigBangProject)'
+2023-08-07 19:52:36.673 +05:30 [INF] HTTP POST /AgentSide/GetHotelNameBySpotId responded 200 in 135.6555 ms
+2023-08-07 19:52:36.675 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7026/AgentSide/GetHotelNameBySpotId application/json 95 - 200 - application/json;+charset=utf-8 139.4828ms
