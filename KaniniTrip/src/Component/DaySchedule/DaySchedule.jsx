@@ -12,8 +12,12 @@ import {
 } from 'mdb-react-ui-kit';
 import './DaySchedule.css';
 import StarRating from '../StarRating/StarRating';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const DaySchedule = () => {
+    const { locationId } = useParams();//passed value from previous component
+    const { packageId } = useParams();//passed value from previous component
     const [daywise, setDayWise] = useState([]);
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const [selectedHotel, setSelectedHotel] = useState({
@@ -23,11 +27,14 @@ const DaySchedule = () => {
         hotelFeatures: '',
         mealsName: '',
     });
+    //store in session-storage
+    sessionStorage.setItem('packageId', packageId);
     useEffect(() => {
         // Fetch daywise schedule data using axios and update the state
         const fetchDaywiseData = async () => {
             try {
-                const response = await axios.get('https://localhost:7026/UserSide/GetParticularPackageDetails?packageId=1');
+                console.log(packageId)
+                const response = await axios.get(`https://localhost:7026/UserSide/GetParticularPackageDetails?packageId=${packageId}`);
                 setDayWise(response.data); // Assuming the API response contains the data for day schedules
             } catch (error) {
                 console.error(error);
@@ -35,7 +42,7 @@ const DaySchedule = () => {
         };
 
         fetchDaywiseData();
-    }, []);
+    }, [packageId]);
 
 
 
@@ -54,9 +61,12 @@ const DaySchedule = () => {
                 <img src={gallery} className='gallery-img' alt='Gallery' />
             </div>
             <div className='gallery-head'>DAY SCHEDULE</div>
-            <div className='gallery-add' >
-                BOOK NOW
-            </div>
+
+            <Link to={`/location/package/${locationId}/dayschedule/${packageId}/book`}>
+                <div className='gallery-add' >
+                    BOOK NOW
+                </div>
+            </Link>
             <div className="container mt-5">
                 {daywise.map((item, index) => (
                     <MDBCard key={index} className='mt-5 move-up' style={{ maxWidth: '1040px' }}>

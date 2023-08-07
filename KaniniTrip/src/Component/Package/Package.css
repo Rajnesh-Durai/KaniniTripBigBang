@@ -1,4 +1,4 @@
-.package-head{
+.package-head {
     font-size: 72px;
     font-weight: 800;
     position: absolute;
@@ -9,98 +9,243 @@
     cursor: pointer;
 }
 
-.card-image{
+.card-image {
     height: 300px;
 }
-.card-location
-{
+
+.card-location {
     cursor: pointer;
     transition: 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.card-location:hover{
+
+.card-location:hover {
     translate: 0px -8px;
+    .location-body {
+        background-color: rgb(23, 39, 103);
+        color:#fff;
+        .location-name{
+            color: #fff;
+        }
+        .location-price {
+            color: #fff;
+        }
+    }
+    .package-name{
+        color: #fff;
+    }
 }
-.location-name{
+
+.location-name {
     font-weight: 600;
     font-size: 26px;
     color: black;
 }
-.location-body
-{
+
+.location-body {
     background-color: white;
 }
-.location-price
-{
+
+
+.location-price {
     font-size: 22px;
     color: black;
     font-weight: 500;
 }
-.package-heading
-{
+
+.package-heading {
     font-size: 38px;
     font-weight: 700;
     color: black;
     margin-bottom: 55px;
 }
 
+.search-box {
+    width: 700px;
+    height: 90px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    border-radius: 40px;
+    background-color: #fff;
+    left: 31%;
+    top: 70%;
+    padding: 20px;
+}
 
+.search-bar{
+    outline: none;
+    font-size: 32px;
+    font-weight: 600;
+    color: black;
+    margin-left: 15px;
+    width: 100%;
+    border-color: transparent;
+}
 
 @media screen and (max-width:1280px) {
-    .package-head{
-        left:40%;
+    .package-head {
+        left: 40%;
+    }
+    .search-box {
+        width: 700px;
+        height: 90px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 21%;
+        top: 80%;
+        padding: 20px;
+    }
+}
+@media screen and (max-width:890px) {
+    .package-head {
+        left: 36%;
+    }
+    .search-box {
+        width: 500px;
+        height: 90px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 21%;
+        top: 80%;
+        padding: 20px;
     }
 }
 @media screen and (max-width:1080px) {
-    .package-head{
-        left:36%;
+    .package-head {
+        left: 36%;
     }
 }
+
 @media screen and (max-width:1000px) {
-    .package-head{
-        left:36%;
+    .package-head {
+        left: 36%;
         font-size: 60px;
     }
-    .gallery-add{
+
+    .gallery-add {
         left: 40%;
     }
 }
+
 @media screen and (max-width:840px) {
-    .package-head{
-        left:26%;
+    .package-head {
+        left: 26%;
         font-size: 56px;
     }
-    .gallery-img
-    {
+
+    .gallery-img {
         height: 700px;
     }
+    .search-box {
+        width: 500px;
+        height: 90px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 21%;
+        top: 68%;
+        padding: 20px;
+    }
 }
+
 @media screen and (max-width:740px) {
-    .package-head{
-        left:29%;
+    .package-head {
+        left: 29%;
         font-size: 56px;
     }
 }
+@media screen and (max-width:640px) {
+    .package-head {
+        left: 29%;
+        font-size: 56px;
+    }
+    .search-box {
+        width: 400px;
+        height: 90px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 20%;
+        top: 68%;
+        padding: 20px;
+    }
+}
+
 @media screen and (max-width:600px) {
-    .package-head{
-        left:30%;
+    .package-head {
+        left: 30%;
         font-size: 48px;
     }
 }
+
 @media screen and (max-width:540px) {
-    .package-head{
-        left:22%;
+    .package-head {
+        left: 22%;
         font-size: 42px;
     }
+    .search-box {
+        width: 400px;
+        height: 90px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 12%;
+        top: 68%;
+        padding: 20px;
+    }
 }
+
 @media screen and (max-width:420px) {
-    .package-head{
-        left:22%;
+    .package-head {
+        left: 22%;
         font-size: 36px;
     }
-    .gallery-add{
+
+    .gallery-add {
         top: 400px;
         left: 36%;
         width: 140px;
         font-size: 20px;
+    }
+    .search-box {
+        width: 300px;
+        height: 60px;
+        position: absolute;
+        z-index: 1;
+        box-shadow: rgba(73, 76, 79, 0.2) 0px 8px 24px;
+        cursor: pointer;
+        border-radius: 40px;
+        background-color: #fff;
+        left: 12%;
+        top: 72%;
+        padding: 15px;
+    }
+    .search-bar{
+        outline: none;
+        font-size: 20px;
+        font-weight: 600;
+        color: black;
+        margin-left: 15px;
+        width: 100%;
+        border-color: transparent;
     }
 }

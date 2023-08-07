@@ -13,7 +13,12 @@
     font-size: 20px;
     font-weight: 600;
     margin-left: 15px;
+    color: black;
     margin: auto 15px;
+  }
+  .faIcon-width
+  {
+    width: 80px;
   }
   .img img {
     width: 40px;
@@ -73,7 +78,7 @@ nav .img {
 nav ul {
   display: flex;
 }
-nav ul li p {
+.menu-items, .bg-signup{
   display: block;
   margin-right: 5px;
   padding: 8px;
@@ -83,13 +88,14 @@ nav ul li p {
   transition: 0.2s;
   color: black;
   cursor: pointer;
+  margin-top: 16px;
 }
-nav ul li p:hover {
+.menu-items:hover,.bg-signup:hover,.bg-signup:focus-visible {
   background-color:#285bba;
   color: #fff;
   border-radius: 50px;
 }
-nav ul li p:active {
+.menu-items:active {
   background-color: #285bba;
   color: #fff;
 }
@@ -119,6 +125,78 @@ nav ul li p:active {
   position: relative;
   bottom: 7px;
   right: 8px;
+}
+
+dropdown_c{
+  }
+  
+   .selected span{
+    display:flex; 
+    width:150px;
+    border-radius:5px;
+    color:#131313;
+  }
+  
+   .selected  span{
+    cursor:pointer; 
+    display:flex; 
+    padding:10px 15px;
+    margin:0;
+  }
+  
+   .drop-content{
+    position:relative; 
+  }
+  
+   .drop-content ul{
+  position: absolute;
+      left: 0px;
+      top: -3px;
+      display: none;
+      list-style: none;
+      width: 60px;
+      border-top: 0;
+      border-radius: 0 0 5px 5px;
+      padding-top: 3px;
+  }
+  
+  
+   .drop-content ul li span{
+    display:flex;
+    padding:10px 15px;
+    text-decoration:none;
+    color:#131313;
+  }
+  
+   .drop-content ul li span:hover{
+      background: rgba(0,0,0,0.1);
+      color: #fff;
+      border-left: 5px solid rgba(0,0,0,0.8);
+  }
+
+  .dropdown_c.dropdown_hover:before {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-family: cursive;
+      font-size: 22px;
+  }
+.bg-signup{
+  background-color: #fff;
+  width: auto;
+  padding: 0%;
+  color: black;
+  box-shadow: none;
+  margin-top: 2px;
+}
+.bg-signup:hover,.bg-signup:focus-visible{
+  background-color: #285bba;
+  width: auto;
+  padding: 0%;
+  box-shadow: none;
+  color: black;
+  border: none;
+  color: #fff;
 }
 
 @media screen and (max-width:1780px)
